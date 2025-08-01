@@ -6,9 +6,9 @@ import MissionSection from "../components/about-components/MissionSection";
 import ValuesSection from "../components/about-components/ValuesSection";
 import TimelineSection from "../components/about-components/TimelineSection";
 import TeamSection from "../components/about-components/TeamSection";
+import Footer from "../layout/Footer";
 
 export default function AboutPage() {
-
   return (
     <motion.div
       className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
@@ -16,8 +16,6 @@ export default function AboutPage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-     
-
       <HeroSection />
       <MissionSection />
       <ValuesSection />
@@ -85,6 +83,7 @@ export default function AboutPage() {
           </div>
         </div>
       </motion.section>
+      <Footer />
     </motion.div>
   );
 }

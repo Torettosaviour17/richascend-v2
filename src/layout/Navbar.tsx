@@ -106,7 +106,7 @@ export default function Navbar() {
         {/* Logo - Links to Home */}
         <Link to="/" className="w-[120px] h-[40px] block">
           <img
-            src="/src/assets/logo.png"
+            src="/public/logo.png"
             alt="Logo"
             className="h-full w-auto object-contain"
           />

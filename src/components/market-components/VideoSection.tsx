@@ -5,17 +5,17 @@ const VideoSection = () => {
     {
       title: "Transformer Manufacturing",
       desc: "See how our transformers are built to last",
-      path: "/videos/manufacturing.mp4",
+      path: "/manufacturing.mp4",
     },
     {
       title: "Solar Installation",
       desc: "Watch our installation process",
-      path: "/videos/installation.mp4",
+      path: "/installation.mp4",
     },
     {
       title: "Case Study: Industrial Park",
       desc: "Successful implementation at a major facility",
-      path: "/videos/casestudy.mp4",
+      path: "/casestudy.mp4",
     },
   ];
 
@@ -59,4 +59,3 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-

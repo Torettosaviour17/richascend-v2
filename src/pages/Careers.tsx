@@ -7,7 +7,6 @@ import ApplicationProcessSection from "../components/careers-components/Applicat
 import Footer from "../layout/Footer";
 
 export default function CareersPage() {
-  document.documentElement.classList.remove("dark");
 
   return (
     <motion.div

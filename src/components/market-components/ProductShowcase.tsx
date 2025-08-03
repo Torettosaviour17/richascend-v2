@@ -82,12 +82,12 @@ const ProductShowcase = () => {
                 muted
                 loop
                 playsInline
-                className={`w-full h-full object-cover ${
+                className={`w-full rounded-md h-full object-cover ${
                   isLoading ? "opacity-0" : "opacity-100"
                 }`}
                 onCanPlayThrough={() => setIsLoading(false)}
               >
-                <source src="/videos/transformers.mp4" type="video/mp4" />
+                <source src="/transformers.mp4" type="video/mp4" />
               </video>
             ) : (
               <video
@@ -101,7 +101,7 @@ const ProductShowcase = () => {
                 }`}
                 onCanPlayThrough={() => setIsLoading(false)}
               >
-                <source src="/videos/solar.mp4" type="video/mp4" />
+                <source src="/solar.mp4" type="video/mp4" />
               </video>
             )}
           </div>

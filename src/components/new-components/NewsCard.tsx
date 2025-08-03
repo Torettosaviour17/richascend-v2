@@ -1,6 +1,5 @@
 // components/news/NewsCard.tsx
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 type NewsCardProps = {
   id: number;
@@ -32,12 +31,10 @@ export const NewsCard = ({
       className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
     >
       <div className="relative h-48 w-full overflow-hidden">
-        <Image
+        <img
           src={imageUrl}
           alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
         <div
           className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold text-white"

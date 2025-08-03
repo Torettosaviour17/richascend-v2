@@ -102,7 +102,7 @@ export default function Navbar() {
         ${showNav ? "translate-y-0" : "-translate-y-full"}
         bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm`}
     >
-      <nav className="max-w-[1440px] mx-auto lg:px-8 py-4 flex items-center justify-between">
+      <nav className="max-w-[1440px] mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo - Links to Home */}
         <Link to="/" className="w-[120px] h-[40px] block">
           <img

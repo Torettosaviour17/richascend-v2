@@ -157,7 +157,7 @@ const OurWorkSection = () => {
             onViewportEnter={() => setStatsInView(true)}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-2 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-8 text-white shadow-xl"
+            className="lg:col-span-2 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-1  sm:p-8 text-white shadow-xl"
           >
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-white/20 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
@@ -170,7 +170,7 @@ const OurWorkSection = () => {
                 Our projects consistently exceed industry standards for
                 efficiency, safety, and sustainability.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6">
                 {[
                   { value: "98%", label: "Project Success" },
                   { value: "40%", label: "Energy Savings" },

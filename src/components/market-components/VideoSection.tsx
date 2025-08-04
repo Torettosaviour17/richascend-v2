@@ -10,7 +10,7 @@ const VideoSection = () => {
     {
       title: "Solar Installation",
       desc: "Watch our installation process",
-      path: "/installation.mp4",
+      path: "https://res.cloudinary.com/dcu9phret/video/upload/v1754269635/installation_pc3qul.mp4",
     },
     {
       title: "Case Study: Industrial Park",

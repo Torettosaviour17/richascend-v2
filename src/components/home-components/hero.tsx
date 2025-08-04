@@ -28,7 +28,10 @@ const HeroSection = () => {
             isVideoLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <source src="/engineering-hero-video.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dcu9phret/video/upload/v1754269038/engineering-hero-video_pabj9h.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         {/* Enhanced gradient overlay with dark mode adjustments */}

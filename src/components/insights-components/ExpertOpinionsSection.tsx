@@ -6,11 +6,12 @@ export default function ExpertOpinionsSection() {
   return (
     <section className="py-16">
       <div className="flex items-center mb-10">
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
-        <h2 className="text-3xl font-bold mx-4 text-center">
-          Expert <span className="text-red-500">Opinions</span>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
+        <h2 className="text-3xl font-bold mx-4 text-center text-gray-900 dark:text-white">
+          Expert{" "}
+          <span className="text-red-600 dark:text-red-500">Opinions</span>
         </h2>
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -18,17 +19,21 @@ export default function ExpertOpinionsSection() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-800 rounded-2xl p-8 border border-gray-700"
+          className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700"
         >
           <div className="flex items-start mb-6">
-            <div className="w-16 h-16 rounded-full bg-gray-700 mr-4 flex-shrink-0"></div>
+            <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 mr-4 flex-shrink-0"></div>
             <div>
-              <h3 className="text-xl font-bold">Dr. Michael Chen</h3>
-              <p className="text-red-400">Chief Structural Engineer</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                Dr. Michael Chen
+              </h3>
+              <p className="text-red-600 dark:text-red-400">
+                Chief Structural Engineer
+              </p>
             </div>
           </div>
 
-          <blockquote className="text-lg italic border-l-4 border-red-500 pl-6 py-2 mb-6">
+          <blockquote className="text-lg italic border-l-4 border-red-500 pl-6 py-2 mb-6 text-gray-700 dark:text-gray-300">
             "AI in structural analysis is fundamentally changing how we approach
             engineering problems."
           </blockquote>
@@ -37,7 +42,7 @@ export default function ExpertOpinionsSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center text-gray-400 hover:text-red-400 transition-colors"
+              className="flex items-center text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +70,7 @@ export default function ExpertOpinionsSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center text-gray-400 hover:text-red-400 transition-colors"
+              className="flex items-center text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,18 +96,22 @@ export default function ExpertOpinionsSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 mb-8">
-            <h3 className="text-xl font-bold mb-4">Engineering Digest</h3>
-            <p className="text-gray-400 mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 mb-8">
+            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+              Engineering Digest
+            </h3>
+            <p className="text-gray-700 dark:text-gray-400 mb-6">
               Monthly insights from Richascend's engineering experts.
             </p>
 
             <form className="space-y-4">
               <div>
-                <label className="block text-gray-300 mb-2">Email</label>
+                <label className="block text-gray-800 dark:text-gray-300 mb-2">
+                  Email
+                </label>
                 <input
                   type="email"
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg py-3 px-4 focus:outline-none focus:border-red-500"
+                  className="w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg py-3 px-4 focus:outline-none focus:border-red-500"
                   placeholder="email@example.com"
                 />
               </div>
@@ -111,11 +120,11 @@ export default function ExpertOpinionsSection() {
                 <input
                   type="checkbox"
                   id="subscribe"
-                  className="w-4 h-4 text-red-600 bg-gray-700 border-gray-600 rounded focus:ring-red-500"
+                  className="w-4 h-4 text-red-600 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-red-500"
                 />
                 <label
                   htmlFor="subscribe"
-                  className="ml-2 text-sm text-gray-400"
+                  className="ml-2 text-sm text-gray-800 dark:text-gray-400"
                 >
                   I agree to receive communications
                 </label>

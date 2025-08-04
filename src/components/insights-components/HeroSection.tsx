@@ -11,11 +11,12 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Engineering <span className="text-red-500">Insights</span> That Drive
-          Innovation
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          Engineering{" "}
+          <span className="text-red-600 dark:text-red-500">Insights</span> That
+          Drive Innovation
         </h1>
-        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
           Discover cutting-edge perspectives from Richascend's engineering
           leaders
         </p>
@@ -30,7 +31,7 @@ export default function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-transparent border-2 border-red-600 text-red-400 hover:bg-red-900 font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="bg-transparent border-2 border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900 font-semibold py-3 px-6 rounded-lg transition-colors"
           >
             Contact Our Experts
           </motion.button>
@@ -45,12 +46,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: item * 0.2 }}
             whileHover={{ y: -10 }}
-            className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-red-500 transition-all"
+            className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-red-500 transition-all"
           >
-            <div className="w-12 h-12 bg-red-900 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-red-400"
+                className="h-6 w-6 text-red-600 dark:text-red-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -63,10 +64,10 @@ export default function HeroSection() {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold mb-2">
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
               Innovation Spotlight #{item}
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-700 dark:text-gray-400">
               Discover the latest engineering breakthroughs
             </p>
           </motion.div>

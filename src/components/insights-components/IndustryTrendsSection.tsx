@@ -13,11 +13,12 @@ export default function IndustryTrendsSection() {
   return (
     <section className="py-16">
       <div className="flex items-center mb-10">
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
-        <h2 className="text-3xl font-bold mx-4 text-center">
-          Industry <span className="text-red-500">Trends</span>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
+        <h2 className="text-3xl font-bold mx-4 text-center text-gray-900 dark:text-white">
+          Industry{" "}
+          <span className="text-red-600 dark:text-red-500">Trends</span>
         </h2>
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -25,21 +26,21 @@ export default function IndustryTrendsSection() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
+          className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-300 dark:border-gray-700"
         >
           <div className="flex justify-between items-start mb-6">
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
               Sustainable Engineering Practices
             </h3>
-            <span className="bg-red-900 text-red-400 text-sm px-3 py-1 rounded-full">
+            <span className="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 text-sm px-3 py-1 rounded-full">
               New
             </span>
           </div>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
             How sustainable engineering is reshaping infrastructure projects
             globally.
           </p>
-          <div className="flex items-center text-gray-400 text-sm">
+          <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 mr-1"
@@ -69,17 +70,17 @@ export default function IndustryTrendsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="bg-gray-800 rounded-xl p-5 border border-gray-700 hover:border-red-500 transition-colors group"
+                className="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-300 dark:border-gray-700 hover:border-red-500 transition-colors group"
               >
                 <div className="flex justify-between items-start mb-3">
-                  <h4 className="font-bold group-hover:text-red-400 transition-colors">
+                  <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-red-500 transition-colors">
                     {item.title}
                   </h4>
-                  <span className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                  <span className="text-xs bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded">
                     {item.tag}
                   </span>
                 </div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Exploring the latest advancements in modern engineering.
                 </p>
               </motion.div>
@@ -89,7 +90,7 @@ export default function IndustryTrendsSection() {
           <div className="mt-8 flex justify-center">
             <motion.button
               whileHover={{ x: 5 }}
-              className="flex items-center text-red-400 group"
+              className="flex items-center text-red-600 dark:text-red-400 group"
             >
               <span className="mr-2">View All Trends</span>
               <svg

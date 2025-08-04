@@ -6,28 +6,30 @@ export default function CaseStudySection() {
   return (
     <section className="py-16">
       <div className="flex items-center mb-10">
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
-        <h2 className="text-3xl font-bold mx-4 text-center">
-          Project <span className="text-red-500">Case Studies</span>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
+        <h2 className="text-3xl font-bold mx-4 text-center text-gray-900 dark:text-white">
+          Project{" "}
+          <span className="text-red-600 dark:text-red-500">Case Studies</span>
         </h2>
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
       </div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
-        className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-2xl overflow-hidden"
+        className="bg-gradient-to-br from-white dark:from-gray-800 to-gray-100 dark:to-gray-900 border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Text content */}
           <div className="p-8 md:p-12">
-            <span className="inline-block bg-red-900 text-red-400 text-sm px-3 py-1 rounded-full mb-4">
+            <span className="inline-block bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 text-sm px-3 py-1 rounded-full mb-4">
               Featured Project
             </span>
-            <h3 className="text-3xl font-bold mb-4">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
               SkyBridge Infrastructure
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               Engineered the longest suspension bridge in the region, reducing
               project timeline by 18%.
             </p>
@@ -45,10 +47,12 @@ export default function CaseStudySection() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                 >
-                  <div className="text-2xl font-bold text-red-500">
+                  <div className="text-2xl font-bold text-red-600 dark:text-red-500">
                     {item.value}
                   </div>
-                  <div className="text-gray-400">{item.label}</div>
+                  <div className="text-gray-700 dark:text-gray-400">
+                    {item.label}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -76,7 +80,8 @@ export default function CaseStudySection() {
             </motion.button>
           </div>
 
-          <div className="bg-gray-700 min-h-[300px] relative overflow-hidden">
+          {/* Right Image or Visual block */}
+          <div className="bg-gray-200 dark:bg-gray-700 min-h-[300px] relative overflow-hidden">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -84,21 +89,23 @@ export default function CaseStudySection() {
               className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10"
             ></motion.div>
             <div className="absolute bottom-0 left-0 p-6 z-20">
-              <div className="text-sm text-gray-300">
+              <div className="text-sm text-gray-800 dark:text-gray-300">
                 Infrastructure • Suspension Bridge • 2023
               </div>
             </div>
-            <div className="absolute inset-0 bg-gray-600 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.7 }}
                 className="text-center"
               >
-                <div className="text-5xl font-bold text-gray-800 mb-2">
+                <div className="text-5xl font-bold text-gray-300 dark:text-gray-800 mb-2">
                   Richascend
                 </div>
-                <div className="text-gray-700">Project Visualization</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  Project Visualization
+                </div>
               </motion.div>
             </div>
           </div>

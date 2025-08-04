@@ -10,7 +10,7 @@ export default function TechnologySpotlightSection() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-red-400"
+          className="h-8 w-8 text-red-500 dark:text-red-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -30,7 +30,7 @@ export default function TechnologySpotlightSection() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-red-400"
+          className="h-8 w-8 text-red-500 dark:text-red-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -50,7 +50,7 @@ export default function TechnologySpotlightSection() {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-red-400"
+          className="h-8 w-8 text-red-500 dark:text-red-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -69,11 +69,12 @@ export default function TechnologySpotlightSection() {
   return (
     <section className="py-16">
       <div className="flex items-center mb-10">
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
-        <h2 className="text-3xl font-bold mx-4 text-center">
-          Technology <span className="text-red-500">Spotlight</span>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
+        <h2 className="text-3xl font-bold mx-4 text-center text-gray-900 dark:text-white">
+          Technology{" "}
+          <span className="text-red-600 dark:text-red-500">Spotlight</span>
         </h2>
-        <div className="h-0.5 bg-gradient-to-r from-gray-900 via-red-500 to-gray-900 flex-grow"></div>
+        <div className="h-0.5 bg-gradient-to-r from-gray-300 dark:from-gray-900 via-red-500 to-gray-300 dark:to-gray-900 flex-grow"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,15 +85,17 @@ export default function TechnologySpotlightSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{ y: -10, borderColor: "#ef4444" }}
-            className="bg-gray-800 rounded-2xl p-8 border border-gray-700 transition-all group"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-300 dark:border-gray-700 transition-all group"
           >
-            <div className="w-14 h-14 bg-red-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-800 transition-colors">
+            <div className="w-14 h-14 bg-red-100 dark:bg-red-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 dark:group-hover:bg-red-800 transition-colors">
               {tech.icon}
             </div>
-            <h3 className="text-xl font-bold mb-3 group-hover:text-red-400 transition-colors">
+            <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-red-500 transition-colors">
               {tech.title}
             </h3>
-            <p className="text-gray-400">{tech.description}</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              {tech.description}
+            </p>
           </motion.div>
         ))}
       </div>

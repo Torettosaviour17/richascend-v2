@@ -277,7 +277,7 @@ export default function Navbar() {
             <li className="w-full">
               <Link
                 to="/"
-                className={`block py-2 rounded-md transition text-center text-sm font-medium ${
+                className={`block py-1 rounded-md transition text-center text-sm font-medium ${
                   isActive("/")
                     ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-400"
                     : "text-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -293,7 +293,7 @@ export default function Navbar() {
               <li key={item.path} className="w-full">
                 <Link
                   to={item.path}
-                  className={`block py-2 rounded-md transition text-center text-md font-medium ${
+                  className={`block py-1 rounded-md transition text-center text-md font-medium ${
                     isActive(item.path)
                       ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-400"
                       : "text-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -310,7 +310,7 @@ export default function Navbar() {
               <li key={item.path} className="w-full">
                 <Link
                   to={item.path}
-                  className={`block py-2 rounded-md transition text-center text-md font-medium ${
+                  className={`block py-1 rounded-md transition text-center text-md font-medium ${
                     isActive(item.path)
                       ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-400"
                       : "text-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -329,7 +329,7 @@ export default function Navbar() {
                   setDarkMode((prev) => !prev);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`w-full flex items-center justify-center gap-3 py-2 rounded-md transition text-xl font-medium ${
+                className={`w-full flex items-center justify-center gap-3 py-1 rounded-md transition text-xl font-medium ${
                   darkMode
                     ? "bg-gray-200 dark:bg-gray-800 text-yellow-600 dark:text-yellow-400"
                     : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300"

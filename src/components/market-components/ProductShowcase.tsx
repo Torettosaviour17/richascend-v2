@@ -77,18 +77,27 @@ const ProductShowcase = () => {
 
             {activeTab === "transformers" ? (
               <video
-                ref={transformersVideoRef}
+                key={activeTab} // 🔑 This is the secret sauce
+                ref={
+                  activeTab === "transformers"
+                    ? transformersVideoRef
+                    : solarVideoRef
+                }
                 autoPlay
                 muted
                 loop
                 playsInline
-                className={`w-full rounded-md h-full object-cover ${
+                className={`w-full h-full object-cover ${
                   isLoading ? "opacity-0" : "opacity-100"
                 }`}
                 onCanPlayThrough={() => setIsLoading(false)}
               >
                 <source
-                  src="https://res.cloudinary.com/dcu9phret/video/upload/v1754268733/transformers_xzepiv.mp4"
+                  src={
+                    activeTab === "transformers"
+                      ? "https://res.cloudinary.com/dcu9phret/video/upload/v1754268733/transformers_xzepiv.mp4"
+                      : "/solar.mp4"
+                  }
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -105,7 +114,10 @@ const ProductShowcase = () => {
                 }`}
                 onCanPlayThrough={() => setIsLoading(false)}
               >
-                <source src="/solar.mp4" type="video/mp4" />
+                <source
+                  src="https://res.cloudinary.com/dcu9phret/video/upload/v1754273380/solar_upb4ux.mp4"
+                  type="video/mp4"
+                />
               </video>
             )}
           </div>

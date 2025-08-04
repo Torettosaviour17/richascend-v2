@@ -7,22 +7,28 @@ const OurWorkSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [statsInView, setStatsInView] = useState(false);
-  
+
   // Animated Counter Component
-  const AnimatedCounter = ({ value, duration = 2 }: { value: string; duration?: number }) => {
+  const AnimatedCounter = ({
+    value,
+    duration = 2,
+  }: {
+    value: string;
+    duration?: number;
+  }) => {
     const [displayValue, setDisplayValue] = useState("0");
     // const controls = useRef(motion.div);
-    
+
     // Extract numeric value and suffix (like % or +)
-    const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
-    const suffix = value.replace(/[0-9.]/g, '');
-    
+    const numericValue = parseFloat(value.replace(/[^0-9.]/g, ""));
+    const suffix = value.replace(/[0-9.]/g, "");
+
     useEffect(() => {
       if (!statsInView) return;
-      
+
       let start = 0;
       const increment = numericValue / (duration * 60); // 60fps
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= numericValue) {
@@ -32,12 +38,12 @@ const OurWorkSection = () => {
           setDisplayValue(`${Math.floor(start)}${suffix}`);
         }
       }, 1000 / 60); // 60fps
-      
+
       return () => clearInterval(timer);
     }, [statsInView, numericValue, suffix, duration]);
 
     return (
-      <motion.div 
+      <motion.div
         className="text-3xl font-bold"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 0.3, delay: duration }}
@@ -135,7 +141,10 @@ const OurWorkSection = () => {
                   isVideoLoaded ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <source src="/project-visualization.mp4" type="video/mp4" />
+                <source
+                  src="https://res.cloudinary.com/dcu9phret/video/upload/v1754269276/sustainable-tech_agudgi.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

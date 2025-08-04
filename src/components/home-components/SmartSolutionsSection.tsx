@@ -55,7 +55,10 @@ const SmartSolutionsSection = () => {
                   isVideoLoaded ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <source src="/sustainable-tech.mp4" type="video/mp4" />
+                <source
+                  src="https://res.cloudinary.com/dcu9phret/video/upload/v1754269479/project-visualization_p1jl0x.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />

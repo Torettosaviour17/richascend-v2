@@ -19,7 +19,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Connect With EngineeringCo
+              Connect With Richascend
             </h1>
             <p className="text-xl md:text-2xl mb-8">
               We're here to answer your questions and discuss how our

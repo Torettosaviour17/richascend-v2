@@ -4,34 +4,27 @@ import { motion } from "framer-motion";
 export default function ValuesSection() {
   const values = [
     {
-      title: "Innovation",
-      description: "Pushing boundaries with creative engineering solutions",
-      icon: "💡",
+      title: "Service Excellence",
+      description: "Delivering outstanding service that exceeds expectations.",
+      icon: "🌟",
     },
     {
-      title: "Integrity",
-      description: "Ethical practices in every aspect of our work",
-      icon: "🤝",
+      title: "Client Focus",
+      description:
+        "Prioritizing our clients' needs and satisfaction in all we do.",
+      icon: "🎯",
     },
     {
-      title: "Excellence",
-      description: "Uncompromising quality in execution",
-      icon: "🏆",
+      title: "Product Quality",
+      description:
+        "Providing reliable and superior quality products every time.",
+      icon: "✅",
     },
     {
-      title: "Sustainability",
-      description: "Building for future generations",
-      icon: "🌱",
-    },
-    {
-      title: "Collaboration",
-      description: "Partnering for shared success",
-      icon: "👥",
-    },
-    {
-      title: "Safety",
-      description: "Protecting people above all else",
-      icon: "🛡️",
+      title: "Gratitude",
+      description:
+        "Appreciating our clients, partners, and team every step of the way.",
+      icon: "🙏",
     },
   ];
 
@@ -84,7 +77,7 @@ export default function ValuesSection() {
                 y: -5,
                 borderColor: "#ef4444",
                 backgroundColor: "#f9fafb",
-                dark: { backgroundColor: "#1f2937" },
+                 backgroundColor: "#1f2937",
               }}
             >
               <div className="text-4xl mb-4">{value.icon}</div>

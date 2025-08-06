@@ -1,5 +1,7 @@
 // components/about-components/TeamSection.tsx
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 export default function TeamSection() {
   const teamMembers = [
@@ -93,13 +95,15 @@ export default function TeamSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="border-2 border-red-600 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 font-semibold py-3 px-8 rounded-lg"
-          >
-            View Full Team
-          </motion.button>
+          <Link to="/FullTeamPage">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="border-2 border-red-600 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 font-semibold py-3 px-8 rounded-lg"
+            >
+              View Full Team
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </motion.section>

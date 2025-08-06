@@ -11,6 +11,7 @@ import Insights from "./pages/Insights";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./layout/ScrollToTop";
+import FullTeamPage from "./components/reused-pages/FullTeamPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/insights" element={<Insights />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/FullTeamPage" element={<FullTeamPage />} />
           </Routes>
         </div>
       </div>

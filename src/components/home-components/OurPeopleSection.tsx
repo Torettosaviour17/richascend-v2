@@ -59,9 +59,11 @@ const OurPeopleSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-center mt-16"
         >
-          <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300">
-            Meet Our Full Team
-          </button>
+          <a href="/FullTeamPage" rel="noopener noreferrer">
+            <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300">
+              Meet Our Full Team
+            </button>
+          </a>
         </motion.div>
       </div>
     </section>

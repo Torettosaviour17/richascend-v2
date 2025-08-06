@@ -61,12 +61,19 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <button className="px-8 py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+            <a
+              href="/projects"
+              className="px-8 py-3.5 text-center bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
+            >
               Our Projects
-            </button>
-            <button className="px-8 py-3.5 bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-medium rounded-lg transition-all duration-300 hover:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            </a>
+
+            <a
+              href="/about"
+              className="px-8 py-3.5 text-center bg-transparent border-2 border-white/80 text-white hover:bg-white/10 font-medium rounded-lg transition-all duration-300 hover:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+            >
               Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>

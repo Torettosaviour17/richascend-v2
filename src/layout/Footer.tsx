@@ -10,6 +10,9 @@ import {
   FaClock,
 } from "react-icons/fa";
 
+import { Link } from "react-router-dom";
+
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -20,12 +23,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <div className="bg-gradient-to-r from-red-600 to-red-800 w-10 h-10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent ml-2">
-                EngineeringCo
-              </span>
+              <Link to="/" className="w-[120px] h-[40px] block shrink-0">
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="h-full w-auto object-contain"
+                />
+              </Link>
             </div>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs">
               Pioneering innovative engineering solutions that shape the future.

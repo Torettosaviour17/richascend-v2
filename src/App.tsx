@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import ScrollToTop from "./layout/ScrollToTop";
 import FullTeamPage from "./components/reuseablecomponents/FullTeamPage";
 import TransformersPage from "./components/reuseablecomponents/TransformersPage";
+import TeamSection from "./components/about-components/TeamSection";
 import SolarPage from "./components/reuseablecomponents/SolarPage";
 import TransformerDetailPage from "./components/reuseablecomponents/TransformerDetailPage";
 
@@ -36,7 +37,11 @@ function App() {
             <Route path="/FullTeamPage" element={<FullTeamPage />} />
             <Route path="/transformers" element={<TransformersPage />} />
             <Route path="/solar" element={<SolarPage />} />
-        <Route path="/transformers/:model" element={<TransformerDetailPage />} />
+            <Route path="/teamSection" element={<TeamSection />} />
+            <Route
+              path="/transformers/:model"
+              element={<TransformerDetailPage />}
+            />
           </Routes>
         </div>
       </div>

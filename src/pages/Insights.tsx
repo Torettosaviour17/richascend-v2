@@ -3,6 +3,7 @@ import IndustryTrendsSection from "../components/insights-components/IndustryTre
 import CaseStudySection from "../components/insights-components/CaseStudySection";
 import TechnologySpotlightSection from "../components/insights-components/TechnologySpotlightSection";
 import ExpertOpinionsSection from "../components/insights-components/ExpertOpinionsSection";
+import Footer from "@/layout/Footer";
 
 export default function InsightsPage() {
   return (
@@ -18,6 +19,7 @@ export default function InsightsPage() {
         <TechnologySpotlightSection />
         <div className="h-16"></div>
         <ExpertOpinionsSection />
+        <Footer />
       </main>
     </div>
   );

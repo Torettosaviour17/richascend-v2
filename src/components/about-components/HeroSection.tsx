@@ -1,4 +1,4 @@
-// components/about-components/HeroSection.tsx
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -53,20 +53,24 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div className="flex flex-wrap gap-4" variants={itemVariants}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg"
-            >
-              Our Projects
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 font-semibold py-3 px-6 rounded-lg"
-            >
-              Meet Our Team
-            </motion.button>
+            <Link to="/projects">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg"
+              >
+                Our Projects
+              </motion.button>
+            </Link>
+            <Link to="/teamSection">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 font-semibold py-3 px-6 rounded-lg"
+              >
+                Meet Our Team
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

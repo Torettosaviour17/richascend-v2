@@ -1,5 +1,5 @@
 // components/pages/about.tsx
-// import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import HeroSection from "../components/about-components/HeroSection";
 import MissionSection from "../components/about-components/MissionSection";
@@ -65,20 +65,24 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg"
-              >
-                Contact Us
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10 font-semibold py-3 px-8 rounded-lg"
-              >
-                View Projects
-              </motion.button>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg"
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
+              <Link to="/projects">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10 font-semibold py-3 px-8 rounded-lg"
+                >
+                  View Projects
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const HeroSection = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -175,24 +177,29 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-          <button
-            className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-              darkMode
-                ? "bg-red-600 hover:bg-red-700 text-white"
-                : "bg-red-500 hover:bg-red-600 text-white"
-            }`}
-          >
-            Explore Transformers
-          </button>
-          <button
-            className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-              darkMode
-                ? "bg-blue-600 hover:bg-blue-700 text-white"
-                : "bg-blue-500 hover:bg-blue-600 text-white"
-            }`}
-          >
-            Discover Solar Solutions
-          </button>
+          <Link to="/transformers">
+            <button
+              className={`px-8 py-3 rounded-lg font-medium transition-colors ${
+                darkMode
+                  ? "bg-red-600 hover:bg-red-700 text-white"
+                  : "bg-red-500 hover:bg-red-600 text-white"
+              }`}
+            >
+              Explore Transformers
+            </button>
+          </Link>
+
+          <Link to="/solar">
+            <button
+              className={`px-8 py-3 rounded-lg font-medium transition-colors ${
+                darkMode
+                  ? "bg-blue-600 hover:bg-blue-700 text-white"
+                  : "bg-blue-500 hover:bg-blue-600 text-white"
+              }`}
+            >
+              Discover Solar Solutions
+            </button>
+          </Link>
         </div>
 
         <div

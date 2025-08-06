@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { FaLeaf, FaLightbulb, FaCogs } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const SmartSolutionsSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -129,9 +131,11 @@ const SmartSolutionsSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-16 text-center"
         >
-          <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300 mr-4 mb-3 lg:mb-0">
-            Explore Our Solutions
-          </button>
+          <Link to="/services">
+            <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300 mr-4 mb-3 lg:mb-0">
+              Explore Our Solutions
+            </button>
+          </Link>
           <button className="px-8 py-3 bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-600/10 font-medium rounded-lg transition-all duration-300">
             Download Sustainability Report
           </button>

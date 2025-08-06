@@ -11,7 +11,10 @@ import Insights from "./pages/Insights";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./layout/ScrollToTop";
-import FullTeamPage from "./components/reused-pages/FullTeamPage";
+import FullTeamPage from "./components/reuseablecomponents/FullTeamPage";
+import TransformersPage from "./components/reuseablecomponents/TransformersPage";
+import SolarPage from "./components/reuseablecomponents/SolarPage";
+import TransformerDetailPage from "./components/reuseablecomponents/TransformerDetailPage";
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/FullTeamPage" element={<FullTeamPage />} />
+            <Route path="/transformers" element={<TransformersPage />} />
+            <Route path="/solar" element={<SolarPage />} />
+        <Route path="/transformers/:model" element={<TransformerDetailPage />} />
           </Routes>
         </div>
       </div>

@@ -8,7 +8,7 @@ const MarketPage = () => {
   return (
     <div className="dark:bg-gray-900">
       <HeroSection />
-      <div className="space-y-20">
+      <div>
         <ProductShowcase />
         <TechSection />
         <VideoSection />

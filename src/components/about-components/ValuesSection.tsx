@@ -77,7 +77,6 @@ export default function ValuesSection() {
                 y: -5,
                 borderColor: "#ef4444",
                 backgroundColor: "#f9fafb",
-                 backgroundColor: "#1f2937",
               }}
             >
               <div className="text-4xl mb-4">{value.icon}</div>

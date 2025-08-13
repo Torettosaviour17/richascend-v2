@@ -6,6 +6,7 @@ import MissionSection from "../components/about-components/MissionSection";
 import ValuesSection from "../components/about-components/ValuesSection";
 import TimelineSection from "../components/about-components/TimelineSection";
 import TeamSection from "../components/about-components/TeamSection";
+import ServicesShowcase from "../components/about-components/ServicesShowcase";
 import Footer from "../layout/Footer";
 
 export default function AboutPage() {
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <HeroSection />
       <MissionSection />
       <ValuesSection />
+      <ServicesShowcase />
       <TimelineSection />
       <TeamSection />
 

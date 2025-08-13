@@ -40,8 +40,8 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
             variants={itemVariants}
           >
-            Engineering <span className="text-red-500">Excellence</span> Since
-            2008
+            Powering Progress Through{" "}
+            <span className="text-red-500">Engineering Excellence</span>
           </motion.h1>
 
           <motion.p
@@ -49,7 +49,8 @@ export default function HeroSection() {
             variants={itemVariants}
           >
             Richascend combines cutting-edge engineering with sustainable
-            practices to build the infrastructure of tomorrow.
+            practices to deliver transformative energy and infrastructure
+            solutions across Ghana.
           </motion.p>
 
           <motion.div className="flex flex-wrap gap-4" variants={itemVariants}>
@@ -62,13 +63,13 @@ export default function HeroSection() {
                 Our Projects
               </motion.button>
             </Link>
-            <Link to="/teamSection">
+            <Link to="/services">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 font-semibold py-3 px-6 rounded-lg"
               >
-                Meet Our Team
+                Explore Services
               </motion.button>
             </Link>
           </motion.div>

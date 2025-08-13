@@ -1,4 +1,3 @@
-// components/about-components/MissionSection.tsx
 import { motion } from "framer-motion";
 
 export default function MissionSection() {
@@ -6,7 +5,7 @@ export default function MissionSection() {
     {
       title: "Our Vision",
       description:
-        "To redefine engineering possibilities through sustainable innovation and technological advancement.",
+        "To be Ghana's leading provider of comprehensive energy and infrastructure solutions.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +26,7 @@ export default function MissionSection() {
     {
       title: "Our Mission",
       description:
-        "To engineer sustainable solutions that transform communities and empower progress.",
+        "To deliver innovative, sustainable energy solutions that power communities and drive economic growth.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +45,9 @@ export default function MissionSection() {
       ),
     },
     {
-      title: "Our Approach",
+      title: "Our Expertise",
       description:
-        "Combining technical excellence with environmental stewardship in every project.",
+        "Transformer solutions, solar installations, rural electrification, and construction management.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +84,7 @@ export default function MissionSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Building the <span className="text-red-500">Future</span>,
-            Responsibly
+            Building Ghana's <span className="text-red-500">Energy Future</span>
           </motion.h2>
           <motion.p
             className="text-xl text-gray-700 dark:text-gray-300"
@@ -95,8 +93,8 @@ export default function MissionSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            At Richascend, we engineer solutions that stand the test of time
-            while preserving our planet.
+            At Richascend, we engineer solutions that power industries,
+            communities, and sustainable development.
           </motion.p>
         </div>
 

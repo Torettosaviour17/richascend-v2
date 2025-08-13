@@ -1,30 +1,30 @@
-// components/about-components/ValuesSection.tsx
 import { motion } from "framer-motion";
 
 export default function ValuesSection() {
   const values = [
     {
-      title: "Service Excellence",
-      description: "Delivering outstanding service that exceeds expectations.",
-      icon: "🌟",
+      title: "Engineering Excellence",
+      description:
+        "Delivering precision in transformer installation, solar solutions, and infrastructure projects.",
+      icon: "⚡",
     },
     {
-      title: "Client Focus",
+      title: "Client Partnership",
       description:
-        "Prioritizing our clients' needs and satisfaction in all we do.",
-      icon: "🎯",
+        "Building long-term relationships through reliable service and transparent communication.",
+      icon: "🤝",
     },
     {
-      title: "Product Quality",
+      title: "Sustainable Solutions",
       description:
-        "Providing reliable and superior quality products every time.",
-      icon: "✅",
+        "Implementing eco-friendly practices in rural electrification and construction projects.",
+      icon: "🌱",
     },
     {
-      title: "Gratitude",
+      title: "Community Impact",
       description:
-        "Appreciating our clients, partners, and team every step of the way.",
-      icon: "🙏",
+        "Empowering communities through accessible energy and infrastructure development.",
+      icon: "🏘️",
     },
   ];
 
@@ -60,11 +60,11 @@ export default function ValuesSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            The principles that guide every decision and action at Richascend
+            The principles that guide every project at Richascend
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <motion.div
               key={value.title}

@@ -71,7 +71,8 @@ const ProjectsGrid = ({
           whileHover="hover"
           layout
         >
-          <div className="h-48 bg-gradient-to-r from-cyan-500 to-emerald-500 relative">
+          {/* Updated gradient to red-blue theme */}
+          <div className="h-48 bg-gradient-to-r from-red-600 to-blue-600 relative">
             <div className="absolute top-4 right-4">
               <span
                 className={`px-3 py-1 rounded-full text-xs font-bold ${
@@ -98,7 +99,7 @@ const ProjectsGrid = ({
                 {project.title}
               </h3>
               <button
-                className="text-emerald-600 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+                className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
                 onClick={() =>
                   setExpandedProject(
                     expandedProject === project.id ? null : project.id
@@ -174,7 +175,7 @@ const ProjectsGrid = ({
                   ))}
                 </div>
 
-                <button className="flex items-center text-emerald-600 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300 font-medium">
+                <button className="flex items-center text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 font-medium">
                   View Case Study
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

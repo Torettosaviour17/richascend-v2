@@ -9,8 +9,26 @@ import {
 } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
+// Define types for our services
+type ServiceKey =
+  | "transformers"
+  | "solar"
+  | "construction"
+  | "management"
+  | "equipment";
+
+interface ServiceDetail {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  items: string[];
+}
+
+type ServicesType = Record<ServiceKey, ServiceDetail>;
+
 export const ServiceDetailedSolutions = () => {
-  const [activeService, setActiveService] = useState("transformers");
+  const [activeService, setActiveService] =
+    useState<ServiceKey>("transformers");
 
   const tabVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -30,9 +48,9 @@ export const ServiceDetailedSolutions = () => {
     visible: { opacity: 1, x: 0 },
   };
 
-  const services = {
+  const services: ServicesType = {
     transformers: {
-      icon: <FaBolt className="text-3xl text-amber-500" />,
+      icon: <FaBolt className="text-3xl text-red-600" />,
       title: "Transformer Services",
       description:
         "Comprehensive solutions for power transformers of all types and capacities.",
@@ -46,7 +64,7 @@ export const ServiceDetailedSolutions = () => {
       ],
     },
     solar: {
-      icon: <FaSolarPanel className="text-3xl text-yellow-500" />,
+      icon: <FaSolarPanel className="text-3xl text-blue-500" />,
       title: "Solar Solutions",
       description:
         "End-to-end solar installation management and maintenance services.",
@@ -60,7 +78,7 @@ export const ServiceDetailedSolutions = () => {
       ],
     },
     construction: {
-      icon: <FaHardHat className="text-3xl text-blue-500" />,
+      icon: <FaHardHat className="text-3xl text-red-600" />,
       title: "Construction Services",
       description:
         "Infrastructure development and construction project management.",
@@ -74,7 +92,7 @@ export const ServiceDetailedSolutions = () => {
       ],
     },
     management: {
-      icon: <FaUserCog className="text-3xl text-green-500" />,
+      icon: <FaUserCog className="text-3xl text-blue-500" />,
       title: "Project Management",
       description: "Comprehensive project oversight and consultancy services.",
       items: [
@@ -87,7 +105,7 @@ export const ServiceDetailedSolutions = () => {
       ],
     },
     equipment: {
-      icon: <FaTruck className="text-3xl text-red-500" />,
+      icon: <FaTruck className="text-3xl text-red-600" />,
       title: "Equipment Services",
       description: "Specialized equipment rental and support services.",
       items: [
@@ -109,7 +127,7 @@ export const ServiceDetailedSolutions = () => {
       transition={{ duration: 0.8 }}
     >
       <Helmet>
-        <title>Your Page Title</title>
+        <title>Specialized Service Solutions</title>
       </Helmet>
       <div className="container mx-auto px-4">
         <motion.div
@@ -121,7 +139,7 @@ export const ServiceDetailedSolutions = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Specialized Service Solutions
           </h2>
-          <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             Industry-leading expertise across all energy and infrastructure
             domains
@@ -135,23 +153,26 @@ export const ServiceDetailedSolutions = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <div className="flex flex-wrap border-b border-gray-200 dark:border-gray-700 justify-center">
-            {Object.entries(services).map(([key, service]) => (
-              <motion.button
-                key={key}
-                className={`px-4 py-3 md:px-6 md:py-4 font-medium flex items-center ${
-                  activeService === key
-                    ? "border-b-2 border-blue-600 text-blue-600 dark:text-blue-400"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                }`}
-                onClick={() => setActiveService(key)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                variants={tabVariants}
-              >
-                <span className="mr-2">{service.icon}</span>
-                {service.title}
-              </motion.button>
-            ))}
+            {(Object.keys(services) as ServiceKey[]).map((key) => {
+              const service = services[key];
+              return (
+                <motion.button
+                  key={key}
+                  className={`px-4 py-3 md:px-6 md:py-4 font-medium flex items-center ${
+                    activeService === key
+                      ? "border-b-2 border-red-600 text-red-600 dark:text-red-400"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                  }`}
+                  onClick={() => setActiveService(key)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  variants={tabVariants}
+                >
+                  <span className="mr-2">{service.icon}</span>
+                  {service.title}
+                </motion.button>
+              );
+            })}
           </div>
 
           <motion.div
@@ -184,13 +205,13 @@ export const ServiceDetailedSolutions = () => {
                       className="flex items-start"
                       variants={listItem}
                     >
-                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       {item}
                     </motion.li>
                   ))}
                 </ul>
                 <motion.button
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                  className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -203,7 +224,7 @@ export const ServiceDetailedSolutions = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <div className="w-full h-full bg-gradient-to-r from-blue-400 to-indigo-600 flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
                   <div className="text-white text-xl font-bold text-center px-4">
                     {services[activeService].title} Visualization
                   </div>

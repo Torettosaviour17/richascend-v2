@@ -15,7 +15,7 @@ export const ServiceCTA = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Ready to Transform Your Energy Infrastructure?
+          Ready to Power Your Projects?
         </motion.h2>
         <motion.p
           className="text-xl text-blue-200 max-w-3xl mx-auto mb-10"
@@ -23,7 +23,7 @@ export const ServiceCTA = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Contact our experts for a customized solution assessment
+          Contact our experts for customized solutions across all services
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row justify-center gap-4"

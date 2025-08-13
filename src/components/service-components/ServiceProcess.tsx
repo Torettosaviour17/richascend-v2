@@ -16,6 +16,39 @@ export const ServiceProcess = () => {
     show: { opacity: 1, y: 0 },
   };
 
+  const processSteps = [
+    {
+      step: "01",
+      title: "Consultation & Assessment",
+      desc: "We begin by understanding your specific requirements through detailed discussions and site assessments.",
+    },
+    {
+      step: "02",
+      title: "Solution Design",
+      desc: "Our engineers develop customized solutions tailored to your operational needs and budget.",
+    },
+    {
+      step: "03",
+      title: "Project Planning",
+      desc: "We create detailed project plans with timelines, resources, and contingency measures.",
+    },
+    {
+      step: "04",
+      title: "Implementation",
+      desc: "Our certified technicians execute the project with minimal disruption to your operations.",
+    },
+    {
+      step: "05",
+      title: "Quality Assurance",
+      desc: "Rigorous testing and inspection to ensure all work meets industry standards.",
+    },
+    {
+      step: "06",
+      title: "Ongoing Support",
+      desc: "24/7 maintenance, monitoring, and optimization services for long-term performance.",
+    },
+  ];
+
   return (
     <motion.section
       className="py-20"
@@ -35,7 +68,8 @@ export const ServiceProcess = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A structured approach to delivering exceptional results
+            A structured approach to delivering exceptional results across all
+            services
           </p>
         </motion.div>
 
@@ -55,38 +89,7 @@ export const ServiceProcess = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {[
-              {
-                step: "01",
-                title: "Consultation & Assessment",
-                desc: "We begin with understanding your specific energy challenges and goals through detailed discussions and site assessments.",
-              },
-              {
-                step: "02",
-                title: "Solution Design",
-                desc: "Our engineers develop customized solutions tailored to your operational requirements and budget constraints.",
-              },
-              {
-                step: "03",
-                title: "Implementation Planning",
-                desc: "We create detailed project plans with timelines, resources, and contingency measures for seamless execution.",
-              },
-              {
-                step: "04",
-                title: "Installation & Commissioning",
-                desc: "Our certified technicians execute the installation with minimal disruption, followed by rigorous testing.",
-              },
-              {
-                step: "05",
-                title: "Training & Handover",
-                desc: "Comprehensive training for your team and complete documentation for smooth operations.",
-              },
-              {
-                step: "06",
-                title: "Ongoing Support",
-                desc: "24/7 monitoring, maintenance programs, and performance optimization services.",
-              },
-            ].map((step, idx) => (
+            {processSteps.map((step, idx) => (
               <motion.div
                 key={idx}
                 className={`flex items-start gap-6 ${

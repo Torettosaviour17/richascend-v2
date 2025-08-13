@@ -3,9 +3,9 @@
 const VideoSection = () => {
   const videos = [
     {
-      title: "Transformer Manufacturing",
+      title: "Transformer Installation",
       desc: "See how our transformers are built to last",
-      path: "/manufacturing.mp4",
+      path: "https://res.cloudinary.com/dcu9phret/video/upload/v1754268733/transformers_xzepiv.mp4",
     },
     {
       title: "Solar Installation",

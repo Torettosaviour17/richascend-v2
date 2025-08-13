@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import {
-  FaLightbulb,
-  FaSolarPanel,
   FaBolt,
-  FaPlug,
   FaTools,
+  FaLightbulb,
+  FaHardHat,
+  FaTruck,
+  FaUserCog,
+  FaSolarPanel,
   FaChartLine,
-  FaHandshake,
 } from "react-icons/fa";
 
 export const ServiceOverview = () => {
@@ -25,6 +26,49 @@ export const ServiceOverview = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  const services = [
+    {
+      icon: <FaBolt className="text-3xl" />,
+      title: "Transformer Installation",
+      desc: "Professional installation of power transformers",
+    },
+    {
+      icon: <FaTools className="text-3xl" />,
+      title: "Transformer Repair",
+      desc: "Maintenance and repair services for transformers",
+    },
+    {
+      icon: <FaLightbulb className="text-3xl" />,
+      title: "Rural Electrification",
+      desc: "Bringing power to remote communities",
+    },
+    {
+      icon: <FaHardHat className="text-3xl" />,
+      title: "Construction Work",
+      desc: "Infrastructure development projects",
+    },
+    {
+      icon: <FaTruck className="text-3xl" />,
+      title: "HIAB Hiring Services",
+      desc: "Crane and specialized equipment rental",
+    },
+    {
+      icon: <FaUserCog className="text-3xl" />,
+      title: "Project Management",
+      desc: "End-to-end project supervision",
+    },
+    {
+      icon: <FaChartLine className="text-3xl" />,
+      title: "Consultancy",
+      desc: "Technical expertise and advisory services",
+    },
+    {
+      icon: <FaSolarPanel className="text-3xl" />,
+      title: "Solar Installation Management",
+      desc: "Complete solar project solutions",
+    },
+  ];
+
   return (
     <motion.section
       className="py-20"
@@ -40,11 +84,11 @@ export const ServiceOverview = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our Core Services
+            Our Comprehensive Services
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            End-to-end solutions from design to maintenance
+            End-to-end solutions for energy and infrastructure projects
           </p>
         </motion.div>
 
@@ -54,48 +98,7 @@ export const ServiceOverview = () => {
           initial="hidden"
           animate="show"
         >
-          {[
-            {
-              icon: <FaLightbulb className="text-3xl" />,
-              title: "Design & Engineering",
-              desc: "Custom energy system design",
-            },
-            {
-              icon: <FaSolarPanel className="text-3xl" />,
-              title: "Solar Installations",
-              desc: "Residential & commercial solar",
-            },
-            {
-              icon: <FaBolt className="text-3xl" />,
-              title: "Transformer Services",
-              desc: "Installation & maintenance",
-            },
-            {
-              icon: <FaPlug className="text-3xl" />,
-              title: "Grid Integration",
-              desc: "Utility-scale solutions",
-            },
-            {
-              icon: <FaTools className="text-3xl" />,
-              title: "Maintenance",
-              desc: "Preventive & predictive",
-            },
-            {
-              icon: <FaChartLine className="text-3xl" />,
-              title: "Performance Monitoring",
-              desc: "Real-time analytics",
-            },
-            {
-              icon: <FaHandshake className="text-3xl" />,
-              title: "Consulting",
-              desc: "Energy strategy & planning",
-            },
-            {
-              icon: <FaLightbulb className="text-3xl" />,
-              title: "Energy Audits",
-              desc: "Efficiency optimization",
-            },
-          ].map((service, idx) => (
+          {services.map((service, idx) => (
             <motion.div
               key={idx}
               className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 text-center"
@@ -122,4 +125,3 @@ export const ServiceOverview = () => {
     </motion.section>
   );
 };
-

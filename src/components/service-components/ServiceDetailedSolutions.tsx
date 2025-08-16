@@ -1,27 +1,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  FaBolt,
-  FaSolarPanel,
-  FaHardHat,
-  FaUserCog,
-  FaTruck,
-} from "react-icons/fa";
+import { FaBolt, FaSolarPanel, FaHardHat } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 // Define types for our services
-type ServiceKey =
-  | "transformers"
-  | "solar"
-  | "construction"
-  | "management"
-  | "equipment";
+type ServiceKey = "transformers" | "solar" | "construction";
 
 interface ServiceDetail {
   icon: JSX.Element;
   title: string;
   description: string;
   items: string[];
+  videoUrl: string;
 }
 
 type ServicesType = Record<ServiceKey, ServiceDetail>;
@@ -62,6 +52,7 @@ export const ServiceDetailedSolutions = () => {
         "Oil analysis & filtration",
         "Emergency response services",
       ],
+      videoUrl: "https://www.youtube.com/embed/96Vekm8Ws4U?si=yvolmthVFSMwMPv6",
     },
     solar: {
       icon: <FaSolarPanel className="text-3xl text-blue-500" />,
@@ -76,6 +67,7 @@ export const ServiceDetailedSolutions = () => {
         "Performance monitoring",
         "Grid integration services",
       ],
+      videoUrl: "https://www.youtube.com/embed/xKxrkht7CpY?si=fJo9IkV9CIGEDfe_",
     },
     construction: {
       icon: <FaHardHat className="text-3xl text-red-600" />,
@@ -90,32 +82,7 @@ export const ServiceDetailedSolutions = () => {
         "Structural engineering",
         "Project supervision",
       ],
-    },
-    management: {
-      icon: <FaUserCog className="text-3xl text-blue-500" />,
-      title: "Project Management",
-      description: "Comprehensive project oversight and consultancy services.",
-      items: [
-        "End-to-end project supervision",
-        "Technical consultancy services",
-        "Budget planning & control",
-        "Timeline management",
-        "Quality assurance",
-        "Risk management",
-      ],
-    },
-    equipment: {
-      icon: <FaTruck className="text-3xl text-red-600" />,
-      title: "Equipment Services",
-      description: "Specialized equipment rental and support services.",
-      items: [
-        "HIAB crane rental",
-        "Heavy equipment hiring",
-        "Transportation solutions",
-        "Equipment maintenance",
-        "On-site support",
-        "Logistics management",
-      ],
+      videoUrl: "https://www.youtube.com/embed/vkew-1KK3Sc?si=H8YnYkro3jLxWvGZ",
     },
   };
 
@@ -130,6 +97,7 @@ export const ServiceDetailedSolutions = () => {
         <title>Specialized Service Solutions</title>
       </Helmet>
       <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -146,6 +114,7 @@ export const ServiceDetailedSolutions = () => {
           </p>
         </motion.div>
 
+        {/* Service Tabs */}
         <motion.div
           className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
@@ -175,6 +144,7 @@ export const ServiceDetailedSolutions = () => {
             })}
           </div>
 
+          {/* Service Content */}
           <motion.div
             className="p-6 md:p-8"
             key={activeService}
@@ -188,6 +158,7 @@ export const ServiceDetailedSolutions = () => {
               initial="hidden"
               animate="visible"
             >
+              {/* Left side - Text */}
               <motion.div variants={contentVariants}>
                 <div className="flex items-center mb-4">
                   {services[activeService].icon}
@@ -218,17 +189,22 @@ export const ServiceDetailedSolutions = () => {
                   Request Service Quote
                 </motion.button>
               </motion.div>
+
+              {/* Right side - Video */}
               <motion.div
                 className="bg-gray-100 dark:bg-gray-800 rounded-xl aspect-video flex items-center justify-center overflow-hidden"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <div className="w-full h-full bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
-                  <div className="text-white text-xl font-bold text-center px-4">
-                    {services[activeService].title} Visualization
-                  </div>
-                </div>
+                <iframe
+                  className="w-full h-full"
+                  src={services[activeService].videoUrl}
+                  title={services[activeService].title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </motion.div>
             </motion.div>
           </motion.div>

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { FaBolt, FaSun } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProductShowcase = () => {
   const [activeTab, setActiveTab] = useState("transformers");
@@ -77,7 +78,7 @@ const ProductShowcase = () => {
 
             {activeTab === "transformers" ? (
               <video
-                key={activeTab} // 🔑 This is the secret sauce
+                key={activeTab}
                 ref={
                   activeTab === "transformers"
                     ? transformersVideoRef
@@ -148,6 +149,12 @@ const ProductShowcase = () => {
                     </li>
                   ))}
                 </ul>
+                {/* Fixed Learn More button */}
+                <Link to="/transformers">
+                  <a className="mt-6 inline-block bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                    Learn More
+                  </a>
+                </Link>
               </div>
             ) : (
               <div className="space-y-6">
@@ -174,6 +181,12 @@ const ProductShowcase = () => {
                     </li>
                   ))}
                 </ul>
+                {/* Fixed Learn More button */}
+                <Link to="/solar">
+                  <a className="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                    Learn More
+                  </a>
+                </Link>
               </div>
             )}
           </div>

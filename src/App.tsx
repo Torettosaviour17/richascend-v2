@@ -16,6 +16,8 @@ import TransformersPage from "./components/reuseablecomponents/TransformersPage"
 import TeamSection from "./components/about-components/TeamSection";
 import SolarPage from "./components/reuseablecomponents/SolarPage";
 import TransformerDetailPage from "./components/reuseablecomponents/TransformerDetailPage";
+import QuotePage from "./components/reuseablecomponents/QuotePage";
+
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
             <Route path="/transformers" element={<TransformersPage />} />
             <Route path="/solar" element={<SolarPage />} />
             <Route path="/teamSection" element={<TeamSection />} />
+            <Route path="/quote" element={<QuotePage />} />
+
             <Route
               path="/transformers/:model"
               element={<TransformerDetailPage />}

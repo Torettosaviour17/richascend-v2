@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBolt, FaSolarPanel, FaHardHat } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom"; // 👈 add this
 
 // Define types for our services
 type ServiceKey = "transformers" | "solar" | "construction";
@@ -181,13 +182,17 @@ export const ServiceDetailedSolutions = () => {
                     </motion.li>
                   ))}
                 </ul>
-                <motion.button
-                  className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Request Service Quote
-                </motion.button>
+
+                {/* ✅ Changed button into a Link */}
+                <Link to="/quote">
+                  <motion.button
+                    className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Request Service Quote
+                  </motion.button>
+                </Link>
               </motion.div>
 
               {/* Right side - Video */}

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaBolt,
   FaTools,
@@ -139,21 +140,27 @@ export const ServiceHero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <motion.button
-                className="px-6 py-3 rounded-lg font-medium transition-colors bg-red-600 hover:bg-red-700 text-white"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Request Quote
-              </motion.button>
+              {/* Request Quote → link */}
+              <Link to="/quote">
+                <motion.button
+                  className="px-6 py-3 rounded-lg font-medium transition-colors bg-red-600 hover:bg-red-700 text-white"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Request Quote
+                </motion.button>
+              </Link>
 
-              <motion.button
-                className="px-6 py-3 rounded-lg font-medium transition-colors bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Projects
-              </motion.button>
+              {/* View Projects → link */}
+              <Link to="/projects">
+                <motion.button
+                  className="px-6 py-3 rounded-lg font-medium transition-colors bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Projects
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
 

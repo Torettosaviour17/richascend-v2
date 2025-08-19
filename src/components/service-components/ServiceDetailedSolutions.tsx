@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"; // 👈 add this
 type ServiceKey = "transformers" | "solar" | "construction";
 
 interface ServiceDetail {
-  icon: JSX.Element;
+  icon: React.ReactNode; // 👈 safer type than JSX.Element
   title: string;
   description: string;
   items: string[];

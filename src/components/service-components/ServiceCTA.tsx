@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+// ✅ Wrap Link with motion()
+const MotionLink = motion(Link);
 
 export const ServiceCTA = () => {
   return (
     <motion.section
-      className="py-20 bg-gradient-to-r from-blue-800 to-indigo-900 dark:from-gray-900 dark:to-gray-800"
+      className="relative py-20 bg-gradient-to-r from-blue-800 to-indigo-900 dark:from-gray-900 dark:to-gray-800"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -25,13 +29,16 @@ export const ServiceCTA = () => {
         >
           Contact our experts for customized solutions across all services
         </motion.p>
+
+        {/* ✅ Use MotionLink */}
         <motion.div
           className="flex flex-col sm:flex-row justify-center gap-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <motion.button
+          <MotionLink
+            to="/contact"
             className="px-8 py-4 bg-white text-blue-900 hover:bg-blue-50 rounded-lg font-bold text-lg transition-colors"
             whileHover={{
               scale: 1.05,
@@ -40,8 +47,10 @@ export const ServiceCTA = () => {
             whileTap={{ scale: 0.95 }}
           >
             Schedule Consultation
-          </motion.button>
-          <motion.button
+          </MotionLink>
+
+          <MotionLink
+            to="/quote"
             className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-lg font-bold text-lg transition-colors"
             whileHover={{
               scale: 1.05,
@@ -50,28 +59,18 @@ export const ServiceCTA = () => {
             whileTap={{ scale: 0.95 }}
           >
             Request Service Quote
-          </motion.button>
+          </MotionLink>
         </motion.div>
 
         {/* Floating elements */}
         <motion.div
           className="absolute top-10 left-10 w-4 h-4 rounded-full bg-blue-400"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-20 right-20 w-6 h-6 rounded-full bg-indigo-400"
-          animate={{
-            y: [0, -15, 0],
-            opacity: [0.3, 0.7, 0.3],
-          }}
+          animate={{ y: [0, -15, 0], opacity: [0.3, 0.7, 0.3] }}
           transition={{
             duration: 4,
             repeat: Infinity,

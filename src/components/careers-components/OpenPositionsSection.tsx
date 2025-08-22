@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 type Position = {
   id: string;
@@ -295,9 +297,15 @@ export default function OpenPositionsSection() {
                       </div>
                     </div>
 
-                    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg">
-                      Apply Now
-                    </button>
+                    <Link to="/application-form">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg"
+                      >
+                        Apply Now
+                      </motion.button>
+                    </Link>
                   </div>
                 </motion.div>
               )}

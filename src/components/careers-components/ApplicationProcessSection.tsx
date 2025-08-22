@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 export default function ApplicationProcessSection() {
   const steps = [
@@ -104,9 +106,15 @@ export default function ApplicationProcessSection() {
                 Submit your application today and join our team of innovative
                 engineers shaping the future.
               </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg">
-                Start Application
-              </button>
+              <Link to="/application-form">
+                <motion.button
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Start Application
+                </motion.button>
+              </Link>
             </div>
             <div className="bg-gray-200 dark:bg-gray-800 rounded-xl w-full md:w-64 h-64 flex items-center justify-center">
               <div className="text-center">

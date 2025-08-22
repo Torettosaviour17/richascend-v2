@@ -17,6 +17,8 @@ import TeamSection from "./components/about-components/TeamSection";
 import SolarPage from "./components/reuseablecomponents/SolarPage";
 import TransformerDetailPage from "./components/reuseablecomponents/TransformerDetailPage";
 import QuotePage from "./components/reuseablecomponents/QuotePage";
+import Application from "./components/reuseablecomponents/Application";
+import ApplicationForm from "./components/reuseablecomponents/ApplicationForm";
 
 
 function App() {
@@ -41,10 +43,12 @@ function App() {
             <Route path="/solar" element={<SolarPage />} />
             <Route path="/teamSection" element={<TeamSection />} />
             <Route path="/quote" element={<QuotePage />} />
-
+            <Route path="/application" element={<Application />} />
+            <Route path="/application-form" element={<ApplicationForm />} />
             <Route
               path="/transformers/:model"
               element={<TransformerDetailPage />}
+
             />
           </Routes>
         </div>

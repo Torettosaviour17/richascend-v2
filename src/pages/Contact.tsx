@@ -9,11 +9,14 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Footer from "../layout/Footer";
+import { Link } from "react-router-dom";
+
 
 const ContactPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* Hero Section */}
+
       <div className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -26,12 +29,16 @@ const ContactPage = () => {
               engineering solutions can transform your projects.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-6 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-gray-100 transition-colors">
-                Request a Quote
-              </button>
-              <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
-                Schedule Consultation
-              </button>
+              <Link to="/quote-request">
+                <button className="px-6 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                  Request a Quote
+                </button>
+              </Link>
+              <Link to="/schedule-consultation">
+                <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
+                  Schedule Consultation
+                </button>
+              </Link>
             </div>
           </div>
         </div>

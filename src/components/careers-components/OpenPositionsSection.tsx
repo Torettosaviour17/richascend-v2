@@ -297,7 +297,7 @@ export default function OpenPositionsSection() {
                       </div>
                     </div>
 
-                    <Link to="/application-form">
+                    <Link to="/application">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

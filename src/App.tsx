@@ -19,6 +19,7 @@ import TransformerDetailPage from "./components/reuseablecomponents/TransformerD
 import QuotePage from "./components/reuseablecomponents/QuotePage";
 import Application from "./components/reuseablecomponents/Application";
 import ApplicationForm from "./components/reuseablecomponents/ApplicationForm";
+import ScheduleConsultation from "./components/reuseablecomponents/ScheduleConsultation";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="/quote" element={<QuotePage />} />
             <Route path="/application" element={<Application />} />
             <Route path="/application-form" element={<ApplicationForm />} />
+            <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
             <Route
               path="/transformers/:model"
               element={<TransformerDetailPage />}

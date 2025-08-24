@@ -29,7 +29,7 @@ const ContactPage = () => {
               engineering solutions can transform your projects.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/quote-request">
+              <Link to="/quote">
                 <button className="px-6 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-gray-100 transition-colors">
                   Request a Quote
                 </button>

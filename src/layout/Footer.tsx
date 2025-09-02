@@ -12,7 +12,6 @@ import {
 
 import { Link } from "react-router-dom";
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -32,8 +31,9 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs">
-              Pioneering innovative engineering solutions that shape the future.
-              We bridge imagination with reality through precision and passion.
+              Richasend engineering company Ltd is a world-class engineering
+              company based in Nigeria, a lead team of professionals in
+              electrical energry
             </p>
             <div className="flex space-x-4">
               <a
@@ -126,15 +126,15 @@ const Footer = () => {
               <li className="flex items-start">
                 <FaMapMarkerAlt className="text-red-600 mt-1 mr-3 flex-shrink-0" />
                 <span className="text-gray-600 dark:text-gray-400">
-                  123 Innovation Drive, Tech Park,
+                  25 Onyinafor Avenue, Nibo,
                   <br />
-                  San Francisco, CA 94103
+                  Anambra state, Nigeria.
                 </span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-red-600 mr-3" />
                 <span className="text-gray-600 dark:text-gray-400">
-                  +1 (555) 123-4567
+                  +234 813 518 9992
                 </span>
               </li>
               <li className="flex items-center">
@@ -146,11 +146,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <FaClock className="text-red-600 mt-1 mr-3 flex-shrink-0" />
                 <span className="text-gray-600 dark:text-gray-400">
-                  Monday-Friday: 8am - 6pm
+                  Monday-Saturday: 7:30am - 5:00pm
                   <br />
-                  Saturday: 9am - 2pm
-                  <br />
-                  Sunday: Closed
+                  Sunday: 3:00pm - 6:00pm
                 </span>
               </li>
             </ul>

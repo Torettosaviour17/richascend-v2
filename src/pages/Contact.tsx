@@ -11,7 +11,6 @@ import {
 import Footer from "../layout/Footer";
 import { Link } from "react-router-dom";
 
-
 const ContactPage = () => {
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
@@ -63,11 +62,9 @@ const ContactPage = () => {
                     Headquarters
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    123 Innovation Drive
+                    25 Onyinafor Avenue, Nibo,
                     <br />
-                    Tech Park, San Francisco
-                    <br />
-                    CA 94103, USA
+                    Anambra state, Nigeria.
                   </p>
                 </div>
               </div>
@@ -81,7 +78,7 @@ const ContactPage = () => {
                     Phone
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    +1 (555) 123-4567
+                    +234 813 518 9992
                   </p>
                 </div>
               </div>
@@ -109,11 +106,9 @@ const ContactPage = () => {
                     Business Hours
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    Monday-Friday: 8am - 6pm
+                    Monday-Saturday: 7:30am - 5:00pm
                     <br />
-                    Saturday: 9am - 2pm
-                    <br />
-                    Sunday: Closed
+                    Sunday: 3:00pm - 6:00pm
                   </p>
                 </div>
               </div>

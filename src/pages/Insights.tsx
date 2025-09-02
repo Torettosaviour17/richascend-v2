@@ -9,7 +9,7 @@ export default function InsightsPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-white">
       {/* Main Content */}
-      <main className="container px-4 py-12">
+      <main className=" px-4 py-12">
         <HeroSection />
         <div className="h-16"></div>
         <IndustryTrendsSection />

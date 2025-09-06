@@ -79,14 +79,43 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (searchQuery.trim()) {
+  //     alert(`Searching for: ${searchQuery}`);
+  //     setSearchQuery("");
+  //     setIsSearchOpen(false);
+  //   }
+  // };
+  const searchableItems = [
+    { label: "Market", path: "/market" },
+    { label: "Services", path: "/services" },
+    { label: "Projects", path: "/projects" },
+    { label: "Insights", path: "/insights" },
+    { label: "About", path: "/about" },
+    { label: "Careers", path: "/careers" },
+    { label: "News", path: "/news" },
+    { label: "Contact", path: "/contact" },
+  ];
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      alert(`Searching for: ${searchQuery}`);
+      const match = searchableItems.find((item) =>
+        item.label.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      if (match) {
+        window.location.href = match.path; // 👈 navigates to the page
+      } else {
+        alert("No results found.");
+      }
+
       setSearchQuery("");
       setIsSearchOpen(false);
     }
   };
+
 
   const centerNavItems = [
     { path: "/market", label: "Market" },

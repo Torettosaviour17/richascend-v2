@@ -1,7 +1,7 @@
 // src/layout/Navbar.tsx
 import { useEffect, useState, useRef } from "react";
 import { FaSearch, FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -14,9 +14,32 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<
+    { label: string; path: string }[]
+  >([]);
 
   const searchRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Define all searchable items including pages and content
+  const searchableItems = [
+    { label: "Market", path: "/market", category: "Page" },
+    { label: "Services", path: "/services", category: "Page" },
+    { label: "Projects", path: "/projects", category: "Page" },
+    { label: "Insights", path: "/insights", category: "Page" },
+    { label: "About", path: "/about", category: "Page" },
+    { label: "Careers", path: "/careers", category: "Page" },
+    { label: "News", path: "/news", category: "Page" },
+    { label: "Contact", path: "/contact", category: "Page" },
+    // Add more specific content items as needed
+    { label: "Web Development", path: "/services#web", category: "Service" },
+    { label: "Mobile Apps", path: "/services#mobile", category: "Service" },
+    { label: "UI/UX Design", path: "/services#design", category: "Service" },
+    { label: "Recent Projects", path: "/projects#recent", category: "Section" },
+    { label: "Case Studies", path: "/insights#cases", category: "Section" },
+  ];
 
   // Handle navbar hide/show on scroll
   useEffect(() => {
@@ -57,13 +80,27 @@ export default function Navbar() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsSearchOpen(false);
+    setSearchResults([]);
   }, [location]);
 
-  // Focus search input when opened
+  // Focus search input when opened and handle click outside
   useEffect(() => {
     if (isSearchOpen && searchRef.current) {
       searchRef.current.focus();
     }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target as Node)
+      ) {
+        setIsSearchOpen(false);
+        setSearchResults([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isSearchOpen]);
 
   // Prevent body scroll when mobile menu is open
@@ -79,43 +116,57 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  // const handleSearch = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (searchQuery.trim()) {
-  //     alert(`Searching for: ${searchQuery}`);
-  //     setSearchQuery("");
-  //     setIsSearchOpen(false);
-  //   }
-  // };
-  const searchableItems = [
-    { label: "Market", path: "/market" },
-    { label: "Services", path: "/services" },
-    { label: "Projects", path: "/projects" },
-    { label: "Insights", path: "/insights" },
-    { label: "About", path: "/about" },
-    { label: "Careers", path: "/careers" },
-    { label: "News", path: "/news" },
-    { label: "Contact", path: "/contact" },
-  ];
+  // Handle search input changes
+  const handleSearchInput = (value: string) => {
+    setSearchQuery(value);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      const match = searchableItems.find((item) =>
-        item.label.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-
-      if (match) {
-        window.location.href = match.path; // 👈 navigates to the page
-      } else {
-        alert("No results found.");
-      }
-
-      setSearchQuery("");
-      setIsSearchOpen(false);
+    if (!value.trim()) {
+      setSearchResults([]);
+      return;
     }
+
+    // Search through all items including partial matches
+    const results = searchableItems.filter((item) =>
+      item.label.toLowerCase().includes(value.toLowerCase())
+    );
+
+    // Prioritize exact matches
+    const exactMatches = results.filter(
+      (item) => item.label.toLowerCase() === value.toLowerCase()
+    );
+
+    const partialMatches = results.filter(
+      (item) => !exactMatches.includes(item)
+    );
+
+    setSearchResults([...exactMatches, ...partialMatches]);
   };
 
+  // Handle search submission
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (searchResults.length > 0) {
+      navigate(searchResults[0].path);
+    } else if (searchQuery.trim()) {
+      // Fallback: search the entire site or show no results message
+      alert(
+        `No results found for "${searchQuery}". Try a different search term.`
+      );
+    }
+
+    setSearchQuery("");
+    setIsSearchOpen(false);
+    setSearchResults([]);
+  };
+
+  // Handle direct navigation from search results
+  const handleResultClick = (path: string) => {
+    navigate(path);
+    setSearchQuery("");
+    setIsSearchOpen(false);
+    setSearchResults([]);
+  };
 
   const centerNavItems = [
     { path: "/market", label: "Market" },
@@ -191,11 +242,12 @@ export default function Navbar() {
             ))}
 
             {/* Search */}
-            <div className="relative">
+            <div className="relative" ref={searchContainerRef}>
               <button
                 onClick={() => {
                   setIsSearchOpen(!isSearchOpen);
                   setSearchQuery("");
+                  setSearchResults([]);
                 }}
                 className="text-gray-800 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition-colors"
               >
@@ -203,14 +255,14 @@ export default function Navbar() {
               </button>
 
               {isSearchOpen && (
-                <div className="absolute top-full right-0 mt-3 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 p-2 z-20">
-                  <form onSubmit={handleSearch} className="flex">
+                <div className="absolute top-full right-0 mt-3 w-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 p-2 z-20">
+                  <form onSubmit={handleSearchSubmit} className="flex mb-2">
                     <input
                       type="text"
                       ref={searchRef}
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Search..."
+                      onChange={(e) => handleSearchInput(e.target.value)}
+                      placeholder="Search pages, services, content..."
                       className="flex-1 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
                     <button
@@ -220,6 +272,30 @@ export default function Navbar() {
                       <FaSearch />
                     </button>
                   </form>
+
+                  {/* Search suggestions */}
+                  {searchResults.length > 0 && (
+                    <div className="max-h-60 overflow-y-auto">
+                      {searchResults.map((item, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() => handleResultClick(item.path)}
+                          className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer flex justify-between items-center"
+                        >
+                          <span>{item.label}</span>
+                          <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">
+                            {item.category}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {searchQuery && searchResults.length === 0 && (
+                    <div className="p-2 text-gray-500 dark:text-gray-400 text-sm">
+                      No results found for "{searchQuery}"
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -244,7 +320,11 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center gap-4">
             <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              onClick={() => {
+                setIsSearchOpen(!isSearchOpen);
+                setSearchQuery("");
+                setSearchResults([]);
+              }}
               className="text-gray-800 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition-colors"
             >
               <FaSearch />
@@ -262,21 +342,48 @@ export default function Navbar() {
 
         {/* Mobile search */}
         {isSearchOpen && (
-          <div className="lg:hidden px-4 pb-4">
-            <form onSubmit={handleSearch} className="flex">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search..."
-                className="flex-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-              />
-              <button
-                type="submit"
-                className="bg-red-600 text-white p-2 rounded-r-lg hover:bg-red-700 transition-colors"
-              >
-                <FaSearch />
-              </button>
+          <div className="lg:hidden px-4 pb-4" ref={searchContainerRef}>
+            <form onSubmit={handleSearchSubmit} className="flex flex-col gap-2">
+              <div className="flex">
+                <input
+                  type="text"
+                  ref={searchRef}
+                  value={searchQuery}
+                  onChange={(e) => handleSearchInput(e.target.value)}
+                  placeholder="Search pages, services, content..."
+                  className="flex-1 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <button
+                  type="submit"
+                  className="bg-red-600 text-white p-2 rounded-r-lg hover:bg-red-700 transition-colors"
+                >
+                  <FaSearch />
+                </button>
+              </div>
+
+              {/* Search suggestions */}
+              {searchResults.length > 0 && (
+                <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow max-h-48 overflow-y-auto">
+                  {searchResults.map((item, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => handleResultClick(item.path)}
+                      className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer flex justify-between items-center"
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">
+                        {item.category}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {searchQuery && searchResults.length === 0 && (
+                <div className="p-2 text-gray-500 dark:text-gray-400 text-sm">
+                  No results found for "{searchQuery}"
+                </div>
+              )}
             </form>
           </div>
         )}

@@ -261,55 +261,37 @@ const ContactPage = () => {
       </div>
 
       {/* Map Section */}
+      {/* Map Section */}
       <div className="container mx-auto px-4 pb-16">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden max-w-6xl mx-auto">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3">
+            {/* Google Map Embed with Marker */}
             <div className="md:col-span-2 h-96">
-              {/* Map placeholder */}
-              <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="bg-gray-300 border-2 border-dashed rounded-xl w-16 h-16 mx-auto" />
-                  <p className="mt-4 text-gray-500 dark:text-gray-400">
-                    Interactive map will appear here
-                  </p>
-                </div>
-              </div>
+              <iframe
+                title="Richascend Office Geolocation"
+                src={`https://maps.google.com/maps?q=6.1797,7.0675&z=15&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
+
+            {/* Office Info */}
             <div className="p-8">
               <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-                Global Offices
+                Office Location
               </h2>
-              <ul className="space-y-4">
+              <ul>
                 <li>
                   <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                    San Francisco, USA
+                    Nibo, Anambra State, Nigeria
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    123 Innovation Drive, Tech Park
-                  </p>
-                </li>
-                <li>
-                  <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                    Berlin, Germany
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    45 Techstraße, Innovation District
-                  </p>
-                </li>
-                <li>
-                  <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                    Singapore
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    8 Engineering Way, Science Park
-                  </p>
-                </li>
-                <li>
-                  <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                    Tokyo, Japan
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    22 Shinkansen Avenue, Tech Center
+                    Coordinates: 6°10\u203247\u2033N, 7°04\u203203\u2033E <br />
+                    Address: 25 Onyinafor Avenue, Nibo, Anambra State, Nigeria
                   </p>
                 </li>
               </ul>

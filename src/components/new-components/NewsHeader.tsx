@@ -2,16 +2,21 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const NewsHeader = () => {
+interface NewsHeaderProps {
+  onCategoryChange?: (category: string) => void;
+  onRefresh?: () => void;
+  refreshing?: boolean;
+}
+
+export const NewsHeader = ({ onCategoryChange, onRefresh, refreshing = false }: NewsHeaderProps) => {
   const [activeCategory, setActiveCategory] = useState("All News");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories = [
     "All News",
     "World",
-    "Politics",
-    "Business",
     "Technology",
-    "Science",
+    "Business",
     "Health",
     "Entertainment",
     "Sports",
@@ -23,6 +28,17 @@ export const NewsHeader = () => {
     month: "long",
     day: "numeric",
   });
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    // Convert "All News" to "all" for the API
+    const apiCategory = category === "All News" ? "all" : category;
+    onCategoryChange?.(apiCategory);
+  };
+
+  const handleRefresh = () => {
+    onRefresh?.();
+  };
 
   return (
     <motion.header
@@ -60,25 +76,50 @@ export const NewsHeader = () => {
             </div>
           </div>
 
-          <div className="relative w-full md:w-auto">
-            <input
-              type="text"
-              placeholder="Search for news..."
-              className="w-full md:w-80 px-4 py-2 pl-10 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <svg
-              className="w-5 h-5 text-gray-400 absolute left-3 top-2.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for news..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full md:w-80 px-4 py-2 pl-10 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-            </svg>
+              <svg
+                className="w-5 h-5 text-gray-400 absolute left-3 top-2.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+
+            <button
+              onClick={handleRefresh}
+              disabled={refreshing}
+              className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+              aria-label="Refresh news"
+            >
+              <svg
+                className={`w-5 h-5 ${refreshing ? 'animate-spin' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -93,7 +134,7 @@ export const NewsHeader = () => {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
                 <button
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     activeCategory === category
                       ? "bg-blue-600 text-white"

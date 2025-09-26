@@ -72,7 +72,7 @@ const ProjectsGrid = ({
           layout
         >
           {/* Updated gradient to red-blue theme */}
-          <div className="h-48 bg-gradient-to-r from-red-600 to-blue-600 relative">
+          <div className="h-48 bg-gradient-to-r from-red-600 to-red-600 relative">
             <div className="absolute top-4 right-4">
               <span
                 className={`px-3 py-1 rounded-full text-xs font-bold ${

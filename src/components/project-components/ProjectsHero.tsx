@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ProjectsHero = () => {
   return (
     <motion.section
-      className="py-24 bg-gradient-to-r from-emerald-900 to-teal-800 dark:from-gray-800 dark:to-gray-900"
+      className="py-24 bg-gradient-to-r from-red-900 to-red-700 dark:from-gray-800 dark:to-gray-900"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7 }}

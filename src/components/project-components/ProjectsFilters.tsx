@@ -43,7 +43,7 @@ const ProjectsFilters = ({
             <input
               type="text"
               placeholder="Search projects..."
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 dark:border-red-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -65,7 +65,7 @@ const ProjectsFilters = ({
 
           <div className="relative">
             <select
-              className="appearance-none w-full md:w-64 pl-4 pr-10 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="appearance-none w-full md:w-64 pl-4 pr-10 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
             >
@@ -113,7 +113,7 @@ const ProjectsFilters = ({
               key={cat}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === cat
-                  ? "bg-emerald-600 text-white"
+                  ? "bg-red-600 text-white"
                   : "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
               }`}
               onClick={() => setFilter(cat)}

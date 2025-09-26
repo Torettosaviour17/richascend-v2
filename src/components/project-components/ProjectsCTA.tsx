@@ -35,7 +35,7 @@ const ProjectsCTA = () => {
           transition={{ delay: 2.0 }}
         >
           <motion.button
-            className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-lg transition-colors"
+            className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold text-lg transition-colors"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 10px 25px -5px rgba(16, 185, 129, 0.3)",
@@ -46,7 +46,7 @@ const ProjectsCTA = () => {
           </motion.button>
 
           <motion.button
-            className="px-8 py-4 bg-white text-emerald-600 hover:bg-gray-100 border border-emerald-600 rounded-lg font-bold text-lg transition-colors"
+            className="px-8 py-4 bg-white text-red-600 hover:bg-gray-100 border border-red-600 rounded-lg font-bold text-lg transition-colors"
             whileHover={{
               scale: 1.05,
               backgroundColor: "#f9fafb",

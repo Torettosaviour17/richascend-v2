@@ -46,7 +46,7 @@ const AnimatedCounter = ({
 const ProjectsStats = () => {
   return (
     <motion.section
-      className="py-16 bg-gradient-to-r from-emerald-900 to-teal-800 dark:from-gray-800 dark:to-gray-900"
+      className="py-16 bg-gradient-to-r from-red-900 to-red-700 dark:from-gray-800 dark:to-gray-900"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.1 }}

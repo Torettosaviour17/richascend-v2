@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Project, statusColors } from "./projectTypes";
 
 interface ProjectsGridProps {
@@ -20,14 +21,14 @@ const ProjectsGrid = ({
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
       transition: {
         duration: 0.5,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
       },
     },

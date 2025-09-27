@@ -1,4 +1,4 @@
-import { motion, useTransform, useMotionValue, animate } from "framer-motion";
+import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface AnimatedCounterProps {
@@ -17,9 +17,6 @@ const AnimatedCounter = ({
   delay = 0,
 }: AnimatedCounterProps) => {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) =>
-    Number.isInteger(value) ? Math.floor(latest) : latest.toFixed(1)
-  );
 
   const [displayValue, setDisplayValue] = useState(0);
 

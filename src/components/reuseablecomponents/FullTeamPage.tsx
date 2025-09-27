@@ -6,9 +6,9 @@ import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 export default function FullTeamPage() {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "Chief Executive Officer",
-      bio: "20+ years in engineering leadership with focus on sustainable infrastructure. Led projects across 15 countries with budgets exceeding $500M.",
+      name: "Toretto Saviour",
+      role: "Frontend developer",
+      bio: "i being idea to life",
       expertise: "Strategic Planning, International Project Management",
     },
     {

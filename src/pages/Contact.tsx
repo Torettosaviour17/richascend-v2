@@ -261,7 +261,6 @@ const ContactPage = () => {
       </div>
 
       {/* Map Section */}
-      {/* Map Section */}
       <div className="container mx-auto px-4 pb-16">
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3">
@@ -269,7 +268,7 @@ const ContactPage = () => {
             <div className="md:col-span-2 h-96">
               <iframe
                 title="Richascend Office Geolocation"
-                src={`https://maps.google.com/maps?q=6.1797,7.0675&z=15&output=embed`}
+                src={`https://maps.google.com/maps?q=6.18,7.0661&z=15&t=k&output=embed&markers=6.18,7.0661`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -280,21 +279,19 @@ const ContactPage = () => {
             </div>
 
             {/* Office Info */}
-            <div className="p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
+            <div className="p-8 flex flex-col justify-center">
+              <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
                 Office Location
               </h2>
-              <ul>
-                <li>
-                  <h3 className="font-bold text-gray-800 dark:text-gray-200">
-                    Nibo, Anambra State, Nigeria
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Coordinates: 6°10\u203247\u2033N, 7°04\u203203\u2033E <br />
-                    Address: 25 Onyinafor Avenue, Nibo, Anambra State, Nigeria
-                  </p>
-                </li>
-              </ul>
+              <div>
+                <h3 className="font-semibold text-gray-800 dark:text-gray-200">
+                  Nibo, Anambra State, Nigeria
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mt-2">
+                  Coordinates: 6°10'48"N, 7°03'58"E <br />
+                  Address: 25 Onyinafor Avenue, Nibo, Anambra State, Nigeria
+                </p>
+              </div>
             </div>
           </div>
         </div>

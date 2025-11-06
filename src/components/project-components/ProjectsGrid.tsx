@@ -72,8 +72,15 @@ const ProjectsGrid = ({
           whileHover="hover"
           layout
         >
-          {/* Updated gradient to red-blue theme */}
-          <div className="h-48 bg-gradient-to-r from-red-600 to-red-600 relative">
+          {/* Image Section */}
+          <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+
+            {/* Status Badge */}
             <div className="absolute top-4 right-4">
               <span
                 className={`px-3 py-1 rounded-full text-xs font-bold ${
@@ -87,6 +94,8 @@ const ProjectsGrid = ({
                   : "Planned"}
               </span>
             </div>
+
+            {/* Year Badge */}
             <div className="absolute bottom-4 left-4">
               <span className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-full text-sm">
                 {project.year}

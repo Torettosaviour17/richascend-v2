@@ -8,7 +8,7 @@ export default function FullTeamPage() {
     {
       name: "Toretto Saviour",
       role: "Frontend developer",
-      bio: "i being idea to life",
+      bio: "i can being your idea to life",
       expertise: "Strategic Planning, International Project Management",
     },
     {

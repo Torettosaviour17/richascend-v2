@@ -9,6 +9,7 @@ export interface Project {
   year: number;
   status: ProjectStatus;
   technologies: string[];
+  image: string;
 }
 
 export const statusColors: Record<ProjectStatus, string> = {
@@ -27,6 +28,8 @@ export const projects: Project[] = [
     year: 2023,
     status: "completed",
     technologies: ["Photovoltaic", "Grid Integration", "Energy Storage"],
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
   },
   {
     id: "2",
@@ -37,6 +40,8 @@ export const projects: Project[] = [
     year: 2022,
     status: "completed",
     technologies: ["Smart Transformers", "IoT Monitoring", "Load Balancing"],
+    image:
+      "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80",
   },
   {
     id: "3",
@@ -47,6 +52,8 @@ export const projects: Project[] = [
     year: 2024,
     status: "in-progress",
     technologies: ["Offshore Turbines", "Subsea Cabling", "Marine Logistics"],
+    image:
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
   },
   {
     id: "4",
@@ -61,6 +68,8 @@ export const projects: Project[] = [
       "Eco-friendly Design",
       "Fish Migration",
     ],
+    image:
+      "https://images.unsplash.com/photo-1437482072455-6a9506b6bf1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80",
   },
   {
     id: "5",
@@ -72,6 +81,8 @@ export const projects: Project[] = [
     year: 2025,
     status: "planned",
     technologies: ["Microgrid", "Energy Storage", "AI Management"],
+    image:
+      "https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
   },
   {
     id: "6",
@@ -82,5 +93,7 @@ export const projects: Project[] = [
     year: 2022,
     status: "completed",
     technologies: ["Waste Processing", "Gasification", "Emission Control"],
+    image:
+      "https://images.unsplash.com/photo-1593371256584-ac70d2ab5d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
   },
 ];

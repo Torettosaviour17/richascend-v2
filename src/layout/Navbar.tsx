@@ -189,13 +189,13 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navbar */}
-      <header className={`w-full fixed top-0 z-50 transition-all duration-300 
+      <header
+        className={`w-full fixed top-0 z-50 transition-all duration-300 
           ${showNav ? "translate-y-0" : "-translate-y-full"}
           ${isMobileMenuOpen ? "hidden" : "block"}
-          bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm`}>
-        <div
-          
-        >
+          bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm`}
+      >
+        <div>
           <nav className="max-w-[1440px] mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-4 flex items-center justify-between gap-2">
             {/* Logo */}
             <Link to="/" className="w-[120px] h-[40px] block shrink-0">
@@ -208,7 +208,7 @@ export default function Navbar() {
 
             {/* Center nav links - Always visible */}
             <div className="flex-1 flex justify-center">
-              <ul className="hidden lg:flex gap-4 sm:gap-6 md:gap-8 text-base font-medium overflow-x-auto whitespace-nowrap">
+              <ul className="hidden lg:flex gap-4 sm:gap-6 md:gap-8 text-base font-medium overflow-x-auto whitespace-nowrap overflow-y-hidden">
                 {centerNavItems.map((item) => (
                   <li key={item.path}>
                     <Link

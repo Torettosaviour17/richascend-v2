@@ -39,7 +39,11 @@ export default function EnquiryForm({
         Online delivery is being connected; nothing is sent from this form yet.
         You can download your draft or call the team.
       </p>
-      <form onChange={() => setDraft("")} onSubmit={prepare} className="grid sm:grid-cols-2 gap-5">
+      <form
+        onChange={() => setDraft("")}
+        onSubmit={prepare}
+        className="grid sm:grid-cols-2 gap-5"
+      >
         <label>
           Full name <span aria-hidden="true">*</span>
           <input name="Name" autoComplete="name" required maxLength={120} />

@@ -24,7 +24,11 @@ export default function Navbar() {
     }
   });
   const location = useLocation();
-  useEffect(() => { setOpen(false); setSearch(false); setQuery(""); }, [location.pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setSearch(false);
+    setQuery("");
+  }, [location.pathname]);
   const menuButton = useRef<HTMLButtonElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
   useEffect(() => {

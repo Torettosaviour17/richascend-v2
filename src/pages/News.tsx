@@ -1,47 +1,55 @@
-// pages/news.tsx
-import { NewsHeader } from "../components/new-components/NewsHeader";
-import { NewsGrid } from "../components/new-components/NewsGrid";
-import { NewsSidebar } from "../components/new-components/NewsSidebar";
-import Footer from "@/layout/Footer";
-import { useState } from "react";
-
-export default function NewsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [refreshing, setRefreshing] = useState(false);
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const handleRefresh = async () => {
-    setRefreshing(true);
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setRefreshing(false);
-    // The NewsGrid will detect the category change and refresh automatically
-  };
-
+import { Link } from "react-router-dom";
+import { PageHero, Section } from "../components/SiteUI";
+import { guides } from "../content/guides";
+export default function News() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <NewsHeader 
-        onCategoryChange={handleCategoryChange}
-        onRefresh={handleRefresh}
-        refreshing={refreshing}
-      />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-3/4">
-            <NewsGrid category={selectedCategory} />
-          </div>
-
-          <div className="lg:w-1/4">
-            <NewsSidebar />
+    <>
+      <PageHero
+        eyebrow="NEWS / RICHASCEND"
+        title="Updates worth keeping up with."
+      >
+        <p>
+          Company announcements and useful engineering resources, in one place.
+        </p>
+      </PageHero>
+      <Section title="Company updates">
+        <div className="surface-card flex flex-col md:flex-row gap-8 items-start">
+          <span className="text-red-600 text-5xl" aria-hidden="true">
+            ↗
+          </span>
+          <div>
+            <p className="eyebrow">ANNOUNCEMENTS</p>
+            <h3 className="text-2xl font-bold my-4">
+              Check back for the next company update.
+            </h3>
+            <p className="max-w-2xl text-gray-600 dark:text-gray-300">
+              There are no published company announcements here yet. For current
+              product availability, project enquiries or company information,
+              contact the team directly.
+            </p>
+            <Link className="button button-outline mt-6" to="/contact">
+              Get in touch
+            </Link>
           </div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </Section>
+      <Section title="In the meantime, explore our guides">
+        <div className="grid md:grid-cols-3 gap-6">
+          {guides.map((g) => (
+            <article className="surface-card" key={g.id}>
+              <p className="eyebrow">{g.category}</p>
+              <h3 className="text-xl font-bold my-4">{g.title}</h3>
+              <p className="mb-6">{g.summary}</p>
+              <Link
+                className="text-red-600 dark:text-red-400 font-semibold"
+                to={"/insights/" + g.id}
+              >
+                Read guide ↗
+              </Link>
+            </article>
+          ))}
+        </div>
+      </Section>
+    </>
   );
 }

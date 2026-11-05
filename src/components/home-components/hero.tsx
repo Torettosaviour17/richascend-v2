@@ -1,32 +1,16 @@
 // src/components/Hero/HeroSection.tsx
-import { useEffect, useRef, useState } from "react";
-
 const HeroSection = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Handle video load
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.onloadeddata = () => {
-        setIsVideoLoaded(true);
-      };
-    }
-  }, []);
-
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-[36rem] h-[calc(100svh-5rem)] bg-gray-950 w-full overflow-hidden">
       {/* Video background with dark/light mode overlay */}
       <div className="absolute inset-0 z-0">
         <video
-          ref={videoRef}
+          poster="/transformerGridUpgrade.jpg"
           autoPlay
           loop
           muted
           playsInline
-          className={`w-full h-full object-cover transition-opacity duration-1000 ${
-            isVideoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className="w-full h-full object-cover"
         >
           <source
             src="https://res.cloudinary.com/dcu9phret/video/upload/v1754269038/engineering-hero-video_pabj9h.mp4"
@@ -41,13 +25,7 @@ const HeroSection = () => {
 
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col justify-center h-full px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <div
-          className={`max-w-3xl space-y-6 transition-all duration-700 ease-out ${
-            isVideoLoaded
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
-          }`}
-        >
+        <div className="max-w-3xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
             <span className="block">Engineering</span>
             <span className="block mt-2 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">

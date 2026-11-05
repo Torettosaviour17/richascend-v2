@@ -35,7 +35,7 @@ export const ServiceProcess = () => {
     {
       step: "04",
       title: "Implementation",
-      desc: "Our certified technicians execute the project with minimal disruption to your operations.",
+      desc: "Our installation team execute the project with minimal disruption to your operations.",
     },
     {
       step: "05",
@@ -45,7 +45,7 @@ export const ServiceProcess = () => {
     {
       step: "06",
       title: "Ongoing Support",
-      desc: "24/7 maintenance, monitoring, and optimization services for long-term performance.",
+      desc: "Discuss maintenance, monitoring and support options for long-term performance.",
     },
   ];
 
@@ -66,7 +66,7 @@ export const ServiceProcess = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Our Service Process
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             A structured approach to delivering exceptional results across all
             services
@@ -81,7 +81,7 @@ export const ServiceProcess = () => {
         >
           <div className="absolute left-16 top-16 bottom-16 w-0.5 bg-gray-200 dark:bg-gray-700 hidden md:block">
             <motion.div
-              className="absolute top-0 w-full h-0 bg-blue-600"
+              className="absolute top-0 w-full h-0 bg-red-600"
               initial={{ height: 0 }}
               animate={{ height: "100%" }}
               transition={{ duration: 2, ease: "easeInOut" }}
@@ -99,7 +99,7 @@ export const ServiceProcess = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div
-                  className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 text-xl font-bold"
+                  className="flex-shrink-0 w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400 text-xl font-bold"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   {step.step}

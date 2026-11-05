@@ -16,7 +16,7 @@ export default function ServicesShowcase() {
       description: "Installation, maintenance and repair of power transformers",
     },
     {
-      icon: <FaSolarPanel className="text-3xl text-blue-500" />,
+      icon: <FaSolarPanel className="text-3xl text-red-500" />,
       title: "Solar Solutions",
       description:
         "Management of commercial and residential solar installations",
@@ -27,7 +27,7 @@ export default function ServicesShowcase() {
       description: "Infrastructure development and civil engineering projects",
     },
     {
-      icon: <FaTruck className="text-3xl text-blue-500" />,
+      icon: <FaTruck className="text-3xl text-red-500" />,
       title: "Equipment Rental",
       description: "HIAB crane and specialized equipment hiring",
     },
@@ -37,7 +37,7 @@ export default function ServicesShowcase() {
       description: "End-to-end supervision of complex projects",
     },
     {
-      icon: <FaLightbulb className="text-3xl text-blue-500" />,
+      icon: <FaLightbulb className="text-3xl text-red-500" />,
       title: "Rural Electrification",
       description: "Bringing power to remote communities across Ghana",
     },

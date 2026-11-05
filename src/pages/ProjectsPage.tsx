@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectsHero from "../components/project-components/ProjectsHero";
 import ProjectsFilters from "../components/project-components/ProjectsFilters";
@@ -6,35 +6,23 @@ import ProjectsGrid from "../components/project-components/ProjectsGrid";
 import ProjectsStats from "../components/project-components/ProjectsStats";
 import ProjectsCTA from "../components/project-components/ProjectsCTA";
 import { projects } from "../components/project-components/projectTypes";
-import Footer from "../layout/Footer";
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
-  const [filteredProjects, setFilteredProjects] = useState(projects);
-
-  // Filter projects based on selected filter and search term
-  useEffect(() => {
-    let result = projects;
-
-    if (filter !== "all") {
-      result = result.filter((project) => project.category === filter);
-    }
-
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
-      result = result.filter(
-        (project) =>
-          project.title.toLowerCase().includes(term) ||
-          project.description.toLowerCase().includes(term) ||
-          project.location.toLowerCase().includes(term) ||
-          project.technologies.some((tech) => tech.toLowerCase().includes(term))
-      );
-    }
-
-    setFilteredProjects(result);
-  }, [filter, searchTerm]);
+  const term = searchTerm.trim().toLowerCase();
+  const filteredProjects = projects.filter(
+    (project) =>
+      (filter === "all" || project.category === filter) &&
+      (!term ||
+        [
+          project.title,
+          project.description,
+          project.location,
+          ...project.technologies,
+        ].some((value) => value.toLowerCase().includes(term))),
+  );
 
   return (
     <motion.div
@@ -44,6 +32,13 @@ const ProjectsPage = () => {
       transition={{ duration: 0.5 }}
     >
       <ProjectsHero />
+      <div className="site-container">
+        <p className="form-notice">
+          Illustrative engineering concepts: the entries below demonstrate
+          possible applications. They are not verified Richascend client
+          projects or completion records.
+        </p>
+      </div>
 
       <ProjectsFilters
         filter={filter}
@@ -52,7 +47,7 @@ const ProjectsPage = () => {
         setSearchTerm={setSearchTerm}
       />
 
-      <section className="py-12">
+      <section id="project-list" className="py-12">
         <div className="container mx-auto px-4">
           <ProjectsGrid
             filteredProjects={filteredProjects}
@@ -64,7 +59,6 @@ const ProjectsPage = () => {
 
       <ProjectsStats />
       <ProjectsCTA />
-      <Footer />
     </motion.div>
   );
 };

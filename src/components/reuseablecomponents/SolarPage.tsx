@@ -7,7 +7,11 @@ const SolarPage: React.FC = () => {
       type: "Residential",
       description:
         "Home solar systems with battery storage and smart energy management",
-      features: ["3-10kW systems", "25-year warranty", "Mobile monitoring"],
+      features: [
+        "3-10kW systems",
+        "Warranty subject to supplier terms",
+        "Mobile monitoring",
+      ],
     },
     {
       type: "Commercial",
@@ -34,13 +38,13 @@ const SolarPage: React.FC = () => {
           Solar Energy Solutions
         </h1>
 
-        <div className="mb-12 p-6 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-xl dark:from-blue-700 dark:to-cyan-800">
+        <div className="mb-12 p-6 rounded-xl bg-gradient-to-r from-red-500 to-red-500 text-white shadow-xl dark:from-red-700 dark:to-red-800">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Sustainable Energy for Every Need
           </h2>
           <p className="max-w-4xl text-lg">
-            Our solar products deliver industry-leading efficiency with 25-year
-            performance guarantees.
+            Explore solar options for different applications. System sizing,
+            availability and warranty terms are confirmed after assessment.
           </p>
         </div>
 
@@ -61,7 +65,7 @@ const SolarPage: React.FC = () => {
                   <p className="mb-4 dark:text-gray-300">
                     {solution.description}
                   </p>
-                  <ul className="grid grid-cols-2 gap-2 mb-4">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                     {solution.features.map((feature, i) => (
                       <li
                         key={i}
@@ -72,9 +76,12 @@ const SolarPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="px-6 py-2 rounded-lg font-medium bg-blue-500 hover:bg-blue-600 text-white transition-colors dark:bg-blue-600 dark:hover:bg-blue-700">
+                  <Link
+                    to="/quote"
+                    className="px-6 py-2 rounded-lg font-medium bg-red-500 hover:bg-red-600 text-white transition-colors dark:bg-red-600 dark:hover:bg-red-700"
+                  >
                     Get Quote
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -82,10 +89,11 @@ const SolarPage: React.FC = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link to="/">
-            <button className="px-6 py-3 rounded-lg font-medium transition-colors bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600">
-              &larr; Back to Home
-            </button>
+          <Link
+            to="/"
+            className="px-6 py-3 rounded-lg font-medium transition-colors bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 inline-flex items-center justify-center"
+          >
+            &larr; Back to Home
           </Link>
         </div>
       </div>

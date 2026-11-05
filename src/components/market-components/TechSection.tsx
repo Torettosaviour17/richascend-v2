@@ -24,7 +24,7 @@ const FEATURES: Feature[] = [
   {
     icon: <FaShieldAlt aria-hidden="true" className="inline-block" />,
     title: "Durable Design",
-    color: "text-blue-600",
+    color: "text-red-600",
     description: "Built to withstand harsh environments",
   },
   {

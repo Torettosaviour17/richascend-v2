@@ -1,227 +1,80 @@
-// src/layout/Footer.tsx
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaClock,
-} from "react-icons/fa";
-
 import { Link } from "react-router-dom";
-
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white w-full">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
-          {/* Company Info */}
-          <div className="space-y-6">
-            <div className="flex items-center">
-              <Link to="/" className="w-[120px] h-[40px] block shrink-0">
-                <img
-                  src="/logo.png"
-                  alt="Logo"
-                  className="h-full w-auto object-contain"
-                />
-              </Link>
-            </div>
-            <p className="text-gray-600 dark:text-gray-400 max-w-xs">
-              Richasend engineering company Ltd is a world-class engineering
-              company based in Nigeria, a lead team of professionals in
-              electrical energry
+    <footer className="site-footer">
+      <div className="site-container">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14">
+          <div>
+            <Link to="/" aria-label="Richascend home">
+              <img src="/logo.png" alt="Richascend" className="w-36 mb-5" />
+            </Link>
+            <p className="text-gray-600 dark:text-gray-300">
+              Engineering for dependable power, practical energy solutions and
+              lasting infrastructure.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="bg-gray-200 dark:bg-gray-800 hover:bg-red-500 dark:hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-              >
-                <FaLinkedin className="text-lg text-gray-700 dark:text-gray-300" />
-              </a>
-              <a
-                href="#"
-                className="bg-gray-200 dark:bg-gray-800 hover:bg-red-500 dark:hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-              >
-                <FaTwitter className="text-lg text-gray-700 dark:text-gray-300" />
-              </a>
-              <a
-                href="#"
-                className="bg-gray-200 dark:bg-gray-800 hover:bg-red-500 dark:hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-              >
-                <FaInstagram className="text-lg text-gray-700 dark:text-gray-300" />
-              </a>
-              <a
-                href="#"
-                className="bg-gray-200 dark:bg-gray-800 hover:bg-red-500 dark:hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-              >
-                <FaYoutube className="text-lg text-gray-700 dark:text-gray-300" />
-              </a>
+          </div>
+          <div>
+            <h2 className="footer-title">Explore</h2>
+            <div className="grid gap-3">
+              {[
+                "About",
+                "Services",
+                "Projects",
+                "Insights",
+                "Careers",
+                "News",
+              ].map((p) => (
+                <Link key={p} to={"/" + p.toLowerCase()}>
+                  {p}
+                </Link>
+              ))}
             </div>
           </div>
-
-          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6 border-l-4 border-red-600 pl-3">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Services", href: "/services" },
-                { label: "Projects", href: "/projects" },
-                { label: "Insights", href: "/insights" },
-                { label: "Careers", href: "/careers" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-500 transition-colors flex items-center"
-                  >
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h2 className="footer-title">Our expertise</h2>
+            <div className="grid gap-3">
+              <Link to="/transformers">Power transformers</Link>
+              <Link to="/solar">Solar energy</Link>
+              <Link to="/services">Engineering services</Link>
+              <Link to="/quote">Request a quote</Link>
+              <Link to="/schedule-consultation">Plan a consultation</Link>
+            </div>
           </div>
-
-          {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6 border-l-4 border-red-600 pl-3">
-              Our Services
-            </h3>
-            <ul className="space-y-3">
-              {[
-                "Structural Engineering",
-                "Mechanical Systems Design",
-                "Sustainable Energy Solutions",
-                "Industrial Automation",
-                "Infrastructure Development",
-                "Smart Building Technologies",
-              ].map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    className="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-500 transition-colors flex items-center"
-                  >
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 border-l-4 border-red-600 pl-3">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="text-red-600 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  25 Onyinafor Avenue, Nibo,
-                  <br />
-                  Anambra state, Nigeria.
-                </span>
-              </li>
-              <li className="flex items-center">
-                <FaPhone className="text-red-600 mr-3" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  +234 813 518 9992
-                </span>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="text-red-600 mr-3" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  info@engineeringco.com
-                </span>
-              </li>
-              <li className="flex items-start">
-                <FaClock className="text-red-600 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-600 dark:text-gray-400">
-                  Monday-Saturday: 7:30am - 5:00pm
-                  <br />
-                  Sunday: 3:00pm - 6:00pm
-                </span>
-              </li>
-            </ul>
+            <h2 className="footer-title">Visit & connect</h2>
+            <p className="mb-4">
+              25 Onyinafor Avenue, Nibo,
+              <br />
+              Anambra State, Nigeria.
+            </p>
+            <a className="block mb-4" href="tel:+2348135189992">
+              +234 813 518 9992
+            </a>
+            <Link
+              className="text-red-600 dark:text-red-400 font-semibold"
+              to="/contact"
+            >
+              Contact information ↗
+            </Link>
+            <p className="text-sm mt-5 text-gray-500 dark:text-gray-400">
+              Mon–Sat: 7:30am–5pm
+              <br />
+              Sunday: 3pm–6pm
+            </p>
           </div>
         </div>
-
-        {/* Newsletter */}
-        <div className="bg-gradient-to-r from-red-100 to-red-200 dark:from-red-700 dark:to-red-900 rounded-xl p-8 mb-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
-                  Subscribe to Our Newsletter
-                </h3>
-                <p className="text-gray-700 dark:text-red-100 max-w-lg">
-                  Stay updated with our latest engineering innovations, project
-                  updates, and industry insights.
-                </p>
-              </div>
-              <form className="flex w-full max-w-md">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="px-4 py-3 w-full rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-900 bg-white"
-                />
-                <button
-                  type="submit"
-                  className="bg-gray-800 dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-black text-white px-6 py-3 rounded-r-lg font-medium transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-300 dark:border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 dark:text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Richasend EngineeringCo. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-400 transition-colors text-sm"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-400 transition-colors text-sm"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-400 transition-colors text-sm"
-              >
-                Cookie Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-400 transition-colors text-sm"
-              >
-                Sitemap
-              </a>
-            </div>
+        <div className="border-t border-gray-200 dark:border-gray-700 py-6 flex flex-col sm:flex-row gap-4 justify-between text-sm">
+          <p>
+            © {new Date().getFullYear()} Richascend Engineering. All rights
+            reserved.
+          </p>
+          <div className="flex flex-wrap gap-5">
+            <Link to="/privacy">Privacy</Link>
+            <Link to="/terms">Website terms</Link>
+            <Link to="/sitemap">Sitemap</Link>
           </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

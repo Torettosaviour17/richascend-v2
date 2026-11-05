@@ -1,22 +1,9 @@
 // src/components/SmartSolutionsSection.tsx
 import { motion } from "framer-motion";
 import { FaLeaf, FaLightbulb, FaCogs } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const SmartSolutionsSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.onloadeddata = () => {
-        setIsVideoLoaded(true);
-      };
-    }
-  }, []);
-
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto">
@@ -48,14 +35,12 @@ const SmartSolutionsSection = () => {
           >
             <div className="absolute inset-0">
               <video
-                ref={videoRef}
+                poster="/MicrogridImplementation.avif"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                  isVideoLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className="w-full h-full object-cover"
               >
                 <source
                   src="https://res.cloudinary.com/dcu9phret/video/upload/v1754269479/project-visualization_p1jl0x.mp4"
@@ -85,7 +70,7 @@ const SmartSolutionsSection = () => {
                 icon: <FaLeaf className="text-2xl text-green-500" />,
                 title: "Carbon-Neutral Design",
                 description:
-                  "Our buildings generate more energy than they consume through integrated solar and geothermal systems.",
+                  "Explore how solar generation, efficient equipment and storage can reduce demand on conventional energy sources.",
               },
               {
                 icon: <FaLightbulb className="text-2xl text-yellow-500" />,
@@ -94,7 +79,7 @@ const SmartSolutionsSection = () => {
                   "Intelligent energy distribution systems that optimize renewable resources and reduce waste.",
               },
               {
-                icon: <FaCogs className="text-2xl text-blue-500" />,
+                icon: <FaCogs className="text-2xl text-red-500" />,
                 title: "Climate-Resilient Infrastructure",
                 description:
                   "Engineering solutions designed to withstand extreme weather events and rising sea levels.",
@@ -131,14 +116,18 @@ const SmartSolutionsSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-16 text-center"
         >
-          <Link to="/services">
-            <button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300 mr-4 mb-3 lg:mb-0">
-              Explore Our Solutions
-            </button>
+          <Link
+            to="/services"
+            className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all duration-300 mr-4 mb-3 lg:mb-0 inline-flex items-center justify-center"
+          >
+            Explore Our Solutions
           </Link>
-          <button className="px-8 py-3 bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-600/10 font-medium rounded-lg transition-all duration-300">
-            Download Sustainability Report
-          </button>
+          <Link
+            to="/insights"
+            className="px-8 py-3 bg-transparent border-2 border-red-600 text-red-600 hover:bg-red-600/10 font-medium rounded-lg transition-all duration-300"
+          >
+            Explore sustainability guidance
+          </Link>
         </motion.div>
       </div>
     </section>

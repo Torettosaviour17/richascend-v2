@@ -47,6 +47,7 @@ const ProductShowcase = () => {
 
         <div className="flex border-b border-gray-200 dark:border-gray-700 mb-10 justify-center">
           <button
+            aria-pressed={activeTab === "transformers"}
             className={`px-6 py-3 font-medium text-lg ${
               activeTab === "transformers"
                 ? "border-b-2 border-red-600 text-red-600 dark:text-red-500"
@@ -57,6 +58,7 @@ const ProductShowcase = () => {
             Transformers
           </button>
           <button
+            aria-pressed={activeTab === "solar"}
             className={`px-6 py-3 font-medium text-lg ${
               activeTab === "solar"
                 ? "border-b-2 border-amber-500 text-amber-500"
@@ -78,6 +80,7 @@ const ProductShowcase = () => {
 
             {activeTab === "transformers" ? (
               <video
+                poster="/transformerGridUpgrade.jpg"
                 key={activeTab}
                 ref={
                   activeTab === "transformers"
@@ -105,6 +108,7 @@ const ProductShowcase = () => {
               </video>
             ) : (
               <video
+                poster="/transformerGridUpgrade.jpg"
                 ref={solarVideoRef}
                 autoPlay
                 muted
@@ -133,15 +137,16 @@ const ProductShowcase = () => {
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  High-efficiency transformers with smart monitoring and 30+
-                  year lifespan
+                  Transformer options for different electrical installation
+                  requirements. Confirm the specification and availability with
+                  the team.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "IoT Monitoring System",
-                    "99.2% Energy Efficiency",
+                    "Protection requirements",
+                    "Capacity and voltage selection",
                     "Modular Design",
-                    "30+ Year Lifespan",
+                    "Maintenance planning",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center">
                       <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
@@ -150,10 +155,11 @@ const ProductShowcase = () => {
                   ))}
                 </ul>
                 {/* Fixed Learn More button */}
-                <Link to="/transformers">
-                  <a className="mt-6 inline-block bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
-                    Learn More
-                  </a>
+                <Link
+                  to="/transformers"
+                  className="mt-6 inline-block bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+                >
+                  Learn More
                 </Link>
               </div>
             ) : (
@@ -165,15 +171,15 @@ const ProductShowcase = () => {
                   </h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Premium solar panels with industry-leading efficiency and
-                  durability
+                  Solar options matched to site demand, available space and the
+                  backup requirements of your installation.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "22.8% Conversion Efficiency",
-                    "25-Year Warranty",
+                    "Load and generation planning",
+                    "Supplier warranty review",
                     "Weather Resistant",
-                    "Self-Cleaning Surface",
+                    "Maintenance requirements",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
@@ -182,10 +188,11 @@ const ProductShowcase = () => {
                   ))}
                 </ul>
                 {/* Fixed Learn More button */}
-                <Link to="/solar">
-                  <a className="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
-                    Learn More
-                  </a>
+                <Link
+                  to="/solar"
+                  className="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+                >
+                  Learn More
                 </Link>
               </div>
             )}

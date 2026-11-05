@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Project, statusColors } from "./projectTypes";
+import type { Project } from "./projectTypes";
 
 interface ProjectsGridProps {
   filteredProjects: Project[];
@@ -82,23 +83,15 @@ const ProjectsGrid = ({
 
             {/* Status Badge */}
             <div className="absolute top-4 right-4">
-              <span
-                className={`px-3 py-1 rounded-full text-xs font-bold ${
-                  statusColors[project.status]
-                }`}
-              >
-                {project.status === "completed"
-                  ? "Completed"
-                  : project.status === "in-progress"
-                  ? "In Progress"
-                  : "Planned"}
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-gray-900">
+                Illustrative concept
               </span>
             </div>
 
             {/* Year Badge */}
             <div className="absolute bottom-4 left-4">
               <span className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-full text-sm">
-                {project.year}
+                Concept / {project.category}
               </span>
             </div>
           </div>
@@ -109,10 +102,12 @@ const ProjectsGrid = ({
                 {project.title}
               </h3>
               <button
-                className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+                aria-label={`Show details for ${project.title}`}
+                aria-expanded={expandedProject === project.id}
+                className="icon-button text-red-600 dark:text-red-400"
                 onClick={() =>
                   setExpandedProject(
-                    expandedProject === project.id ? null : project.id
+                    expandedProject === project.id ? null : project.id,
                   )
                 }
               >
@@ -185,8 +180,11 @@ const ProjectsGrid = ({
                   ))}
                 </div>
 
-                <button className="flex items-center text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 font-medium">
-                  View Case Study
+                <Link
+                  to="/insights"
+                  className="flex items-center text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 font-medium"
+                >
+                  Explore planning guides
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="ml-2 h-4 w-4"
@@ -201,7 +199,7 @@ const ProjectsGrid = ({
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </button>
+                </Link>
               </motion.div>
             )}
           </div>

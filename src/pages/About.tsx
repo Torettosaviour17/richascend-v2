@@ -7,7 +7,6 @@ import ValuesSection from "../components/about-components/ValuesSection";
 import TimelineSection from "../components/about-components/TimelineSection";
 import TeamSection from "../components/about-components/TeamSection";
 import ServicesShowcase from "../components/about-components/ServicesShowcase";
-import Footer from "../layout/Footer";
 
 export default function AboutPage() {
   return (
@@ -67,29 +66,22 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg"
-                >
-                  Contact Us
-                </motion.button>
+              <Link
+                to="/contact"
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg inline-flex items-center justify-center"
+              >
+                Contact Us
               </Link>
-              <Link to="/projects">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10 font-semibold py-3 px-8 rounded-lg"
-                >
-                  View Projects
-                </motion.button>
+              <Link
+                to="/projects"
+                className="bg-transparent border-2 border-gray-800 text-gray-800 hover:bg-gray-800/10 dark:border-white dark:text-white dark:hover:bg-white/10 font-semibold py-3 px-8 rounded-lg inline-flex items-center justify-center"
+              >
+                View Projects
               </Link>
             </motion.div>
           </div>
         </div>
       </motion.section>
-      <Footer />
     </motion.div>
   );
 }

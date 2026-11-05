@@ -1,373 +1,109 @@
-import {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaClock,
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
-import Footer from "../layout/Footer";
 import { Link } from "react-router-dom";
-
-const ContactPage = () => {
+import { PageHero, Section } from "../components/SiteUI";
+import EnquiryForm from "../components/EnquiryForm";
+export default function Contact() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
-      {/* Hero Section */}
-
-      <div className="relative bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Connect With Richascend
-            </h1>
-            <p className="text-xl md:text-2xl mb-8">
-              We're here to answer your questions and discuss how our
-              engineering solutions can transform your projects.
+    <>
+      <PageHero
+        eyebrow="CONTACT / LET’S TALK"
+        title="Good engineering starts with understanding."
+      >
+        <p>
+          Tell Richascend what you are planning. Discuss your site, power
+          requirements and the next steps with the team in Nibo, Anambra.
+        </p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          <Link className="button button-primary" to="/quote">
+            Request a quote ↗
+          </Link>
+          <Link className="button button-outline" to="/schedule-consultation">
+            Plan a consultation
+          </Link>
+        </div>
+      </PageHero>
+      <Section title="Let’s connect">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8">
+          <aside className="surface-card self-start">
+            <p className="eyebrow">RICHASCEND / NIGERIA</p>
+            <h3 className="text-xl font-bold mt-4 mb-3">Visit the office</h3>
+            <p>
+              25 Onyinafor Avenue, Nibo,
+              <br />
+              Anambra State, Nigeria.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/quote">
-                <button className="px-6 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-gray-100 transition-colors">
-                  Request a Quote
-                </button>
-              </Link>
-              <Link to="/schedule-consultation">
-                <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
-                  Schedule Consultation
-                </button>
-              </Link>
-            </div>
+            <h3 className="text-lg font-bold mt-7 mb-2">Call the team</h3>
+            <a
+              className="text-red-600 dark:text-red-400 font-semibold"
+              href="tel:+2348135189992"
+            >
+              +234 813 518 9992
+            </a>
+            <h3 className="text-lg font-bold mt-7 mb-2">Opening hours</h3>
+            <p>
+              Monday–Saturday: 7:30am–5pm
+              <br />
+              Sunday: 3pm–6pm
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-7">
+              Online email delivery is the next setup step. Please call for
+              enquiries that need a response now.
+            </p>
+          </aside>
+          <EnquiryForm />
+        </div>
+      </Section>
+      <Section title="Find us in Nibo">
+        <div className="surface-card overflow-hidden p-0">
+          <iframe
+            title="Map of Nibo, Anambra State"
+            src="https://maps.google.com/maps?q=Nibo%2C%20Anambra%20State%2C%20Nigeria&z=13&output=embed"
+            className="w-full h-80"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="p-6">
+            <p>
+              Call ahead to arrange a visit and confirm directions to the
+              office.
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=25+Onyinafor+Avenue+Nibo+Anambra+Nigeria"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block mt-3 text-red-600 dark:text-red-400 font-semibold"
+            >
+              Open directions ↗
+            </a>
           </div>
         </div>
-      </div>
-
-      {/* Contact Methods */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white border-b pb-2">
-              Contact Information
-            </h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
-                  <FaMapMarkerAlt className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                    Headquarters
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    25 Onyinafor Avenue, Nibo,
-                    <br />
-                    Anambra state, Nigeria.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
-                  <FaPhone className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                    Phone
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    +234 813 518 9992
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
-                  <FaEnvelope className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                    Email
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    info@engineeringco.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
-                  <FaClock className="text-blue-600 dark:text-blue-400 text-xl" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                    Business Hours
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1">
-                    Monday-Saturday: 7:30am - 5:00pm
-                    <br />
-                    Sunday: 3:00pm - 6:00pm
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                  Follow Us
-                </h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-                  >
-                    <FaLinkedin className="text-xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-blue-400 hover:text-white transition-colors"
-                  >
-                    <FaTwitter className="text-xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-pink-600 hover:text-white transition-colors"
-                  >
-                    <FaInstagram className="text-xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-red-600 hover:text-white transition-colors"
-                  >
-                    <FaYoutube className="text-xl" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="md:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white border-b pb-2">
-              Send Us a Message
-            </h2>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-gray-700 dark:text-gray-300 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-gray-700 dark:text-gray-300 mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  placeholder="How can we help you?"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="department"
-                  className="block text-gray-700 dark:text-gray-300 mb-2"
-                >
-                  Department
-                </label>
-                <select
-                  id="department"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                >
-                  <option value="">Select a department</option>
-                  <option value="sales">Sales & Inquiries</option>
-                  <option value="support">Technical Support</option>
-                  <option value="projects">Project Management</option>
-                  <option value="hr">Human Resources</option>
-                  <option value="partnerships">Partnerships</option>
-                </select>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-700 dark:text-gray-300 mb-2"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  placeholder="Describe your project or inquiry in detail..."
-                ></textarea>
-              </div>
-
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  htmlFor="consent"
-                  className="ml-2 text-sm text-gray-700 dark:text-gray-300"
-                >
-                  I agree to EngineeringCo's privacy policy and terms of service
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full md:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+      </Section>
+      <Section title="Before you get in touch">
+        <div className="grid md:grid-cols-2 gap-5">
+          {[
+            [
+              "What should I include in a quote request?",
+              "Include the site location, type of installation, intended use, approximate load or capacity, and your preferred timeline. The team can advise which technical details are needed next.",
+            ],
+            [
+              "Is a consultation a confirmed appointment?",
+              "No. Your preferred date and time need to be agreed with the team. Call the office to confirm availability.",
+            ],
+            [
+              "Can I enquire about a product?",
+              "Yes. Note the transformer capacity or solar application you have in mind. Final specifications, availability and pricing should be confirmed directly.",
+            ],
+            [
+              "How do I ask about working together?",
+              "Call to discuss engineering roles, supplier enquiries or partnerships. The careers page also helps you prepare an expression of interest.",
+            ],
+          ].map(([q, a]) => (
+            <details className="surface-card" key={q}>
+              <summary className="font-bold cursor-pointer">{q}</summary>
+              <p className="mt-4 text-gray-600 dark:text-gray-300">{a}</p>
+            </details>
+          ))}
         </div>
-      </div>
-
-      {/* Map Section */}
-      <div className="container mx-auto px-4 pb-16">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {/* Google Map Embed with Marker */}
-            <div className="md:col-span-2 h-96">
-              <iframe
-                title="Richascend Office Geolocation"
-                src={`https://maps.google.com/maps?q=6.18,7.0661&z=15&t=k&output=embed&markers=6.18,7.0661`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-
-            {/* Office Info */}
-            <div className="p-8 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
-                Office Location
-              </h2>
-              <div>
-                <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                  Nibo, Anambra State, Nigeria
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mt-2">
-                  Coordinates: 6°10'48"N, 7°03'58"E <br />
-                  Address: 25 Onyinafor Avenue, Nibo, Anambra State, Nigeria
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ Section */}
-      <div className="bg-gray-100 dark:bg-gray-800 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Find answers to common questions about our services, projects,
-                and partnership opportunities.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  question:
-                    "What types of engineering projects do you specialize in?",
-                  answer:
-                    "We specialize in structural engineering, mechanical systems design, sustainable energy solutions, industrial automation, infrastructure development, and smart building technologies.",
-                },
-                {
-                  question: "How do I request a quote for my project?",
-                  answer:
-                    "You can request a quote by filling out our contact form, emailing quotes@engineeringco.com, or calling our sales department at +1 (555) 123-4567. Please provide as much detail as possible about your project requirements.",
-                },
-                {
-                  question: "What is your typical project timeline?",
-                  answer:
-                    "Project timelines vary based on complexity and scope. Small projects may take 2-4 weeks, while large-scale implementations typically require 3-6 months. We provide detailed timelines during our initial consultation.",
-                },
-                {
-                  question: "Do you offer international services?",
-                  answer:
-                    "Yes, we serve clients globally with offices in the US, Germany, Singapore, and Japan. Our international team can manage projects in over 23 countries across 5 continents.",
-                },
-                {
-                  question: "How do I become a partner or supplier?",
-                  answer:
-                    "We're always looking for quality partners. Please visit our Partnerships page or email partnerships@engineeringco.com with your company details, certifications, and areas of expertise.",
-                },
-              ].map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-gray-700 rounded-lg shadow-sm p-6"
-                >
-                  <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Didn't find what you're looking for?
-              </p>
-              <button className="px-6 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-medium transition-colors">
-                Contact Support
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </div>
+      </Section>
+    </>
   );
-};
-
-export default ContactPage;
+}

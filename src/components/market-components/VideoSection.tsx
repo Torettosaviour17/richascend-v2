@@ -36,6 +36,8 @@ const VideoSection = () => {
             <div key={index} className="group">
               <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden">
                 <video
+                  poster="/transformerGridUpgrade.jpg"
+                  preload="metadata"
                   autoPlay
                   muted
                   playsInline

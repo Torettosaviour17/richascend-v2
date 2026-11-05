@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { ServiceHero } from "../components/service-components/ServiceHero";
-import { ServiceOverview } from "../components/service-components//ServiceOverview";
-import { ServiceDetailedSolutions } from "../components/service-components//ServiceDetailedSolutions";
-import { ServiceProcess } from "../components/service-components//ServiceProcess";
-import { ServiceCTA } from "../components/service-components//ServiceCTA";
-import Footer from "../layout/Footer";
+import { ServiceOverview } from "../components/service-components/ServiceOverview";
+import { ServiceDetailedSolutions } from "../components/service-components/ServiceDetailedSolutions";
+import { ServiceProcess } from "../components/service-components/ServiceProcess";
+import { ServiceCTA } from "../components/service-components/ServiceCTA";
 
 export default function Services() {
   return (
@@ -19,7 +18,6 @@ export default function Services() {
       <ServiceDetailedSolutions />
       <ServiceProcess />
       <ServiceCTA />
-      <Footer />
     </motion.div>
   );
-};
+}

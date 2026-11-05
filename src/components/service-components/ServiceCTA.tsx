@@ -7,7 +7,7 @@ const MotionLink = motion(Link);
 export const ServiceCTA = () => {
   return (
     <motion.section
-      className="relative py-20 bg-gradient-to-r from-blue-800 to-indigo-900 dark:from-gray-900 dark:to-gray-800"
+      className="relative py-20 bg-gradient-to-r from-red-800 to-red-900 dark:from-gray-900 dark:to-gray-800"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -22,7 +22,7 @@ export const ServiceCTA = () => {
           Ready to Power Your Projects?
         </motion.h2>
         <motion.p
-          className="text-xl text-blue-200 max-w-3xl mx-auto mb-10"
+          className="text-xl text-red-200 max-w-3xl mx-auto mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -39,7 +39,7 @@ export const ServiceCTA = () => {
         >
           <MotionLink
             to="/contact"
-            className="px-8 py-4 bg-white text-blue-900 hover:bg-blue-50 rounded-lg font-bold text-lg transition-colors"
+            className="px-8 py-4 bg-white text-red-900 hover:bg-red-50 rounded-lg font-bold text-lg transition-colors"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.3)",
@@ -64,12 +64,12 @@ export const ServiceCTA = () => {
 
         {/* Floating elements */}
         <motion.div
-          className="absolute top-10 left-10 w-4 h-4 rounded-full bg-blue-400"
+          className="absolute top-10 left-10 w-4 h-4 rounded-full bg-red-400"
           animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-6 h-6 rounded-full bg-indigo-400"
+          className="absolute bottom-20 right-20 w-6 h-6 rounded-full bg-red-400"
           animate={{ y: [0, -15, 0], opacity: [0.3, 0.7, 0.3] }}
           transition={{
             duration: 4,

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBolt, FaSolarPanel, FaHardHat } from "react-icons/fa";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom"; // 👈 add this
 
 // Define types for our services
@@ -56,7 +55,7 @@ export const ServiceDetailedSolutions = () => {
       videoUrl: "https://www.youtube.com/embed/96Vekm8Ws4U?si=yvolmthVFSMwMPv6",
     },
     solar: {
-      icon: <FaSolarPanel className="text-3xl text-blue-500" />,
+      icon: <FaSolarPanel className="text-3xl text-red-500" />,
       title: "Solar Solutions",
       description:
         "End-to-end solar installation management and maintenance services.",
@@ -94,9 +93,6 @@ export const ServiceDetailedSolutions = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <Helmet>
-        <title>Specialized Service Solutions</title>
-      </Helmet>
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -127,6 +123,7 @@ export const ServiceDetailedSolutions = () => {
               const service = services[key];
               return (
                 <motion.button
+                  aria-pressed={activeService === key}
                   key={key}
                   className={`px-4 py-3 md:px-6 md:py-4 font-medium flex items-center ${
                     activeService === key
@@ -184,14 +181,11 @@ export const ServiceDetailedSolutions = () => {
                 </ul>
 
                 {/* ✅ Changed button into a Link */}
-                <Link to="/quote">
-                  <motion.button
-                    className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Request Service Quote
-                  </motion.button>
+                <Link
+                  to="/quote"
+                  className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+                >
+                  Request Service Quote
                 </Link>
               </motion.div>
 
@@ -206,7 +200,7 @@ export const ServiceDetailedSolutions = () => {
                   className="w-full h-full"
                   src={services[activeService].videoUrl}
                   title={services[activeService].title}
-                  frameBorder="0"
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />

@@ -1,3 +1,6 @@
+import GuidePage from "./pages/GuidePage";
+import Footer from "./layout/Footer";
+import { UtilityPage, NotFound } from "./pages/UtilityPage";
 // src/App.tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -13,7 +16,7 @@ import Contact from "./pages/Contact";
 import ScrollToTop from "./layout/ScrollToTop";
 import FullTeamPage from "./components/reuseablecomponents/FullTeamPage";
 import TransformersPage from "./components/reuseablecomponents/TransformersPage";
-import TeamSection from "./components/about-components/TeamSection";
+
 import SolarPage from "./components/reuseablecomponents/SolarPage";
 import TransformerDetailPage from "./components/reuseablecomponents/TransformerDetailPage";
 import QuotePage from "./components/reuseablecomponents/QuotePage";
@@ -21,14 +24,16 @@ import Application from "./components/reuseablecomponents/Application";
 import ApplicationForm from "./components/reuseablecomponents/ApplicationForm";
 import ScheduleConsultation from "./components/reuseablecomponents/ScheduleConsultation";
 
-
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200">
         <Navbar />
-        <div className="pt-20">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <main id="main-content" className="site-main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -36,24 +41,32 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/insights/:slug" element={<GuidePage />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/FullTeamPage" element={<FullTeamPage />} />
             <Route path="/transformers" element={<TransformersPage />} />
             <Route path="/solar" element={<SolarPage />} />
-            <Route path="/teamSection" element={<TeamSection />} />
+            <Route path="/teamSection" element={<FullTeamPage />} />
             <Route path="/quote" element={<QuotePage />} />
             <Route path="/application" element={<Application />} />
             <Route path="/application-form" element={<ApplicationForm />} />
-            <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
+            <Route
+              path="/schedule-consultation"
+              element={<ScheduleConsultation />}
+            />
             <Route
               path="/transformers/:model"
               element={<TransformerDetailPage />}
-
             />
+            <Route path="/privacy" element={<UtilityPage kind="privacy" />} />
+            <Route path="/terms" element={<UtilityPage kind="terms" />} />
+            <Route path="/sitemap" element={<UtilityPage kind="sitemap" />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

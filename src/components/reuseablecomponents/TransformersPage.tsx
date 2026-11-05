@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Image imports - replace with your actual images
-import Transformer1 from "/transformer1.avif";
-import Transformer2 from "/transformer2.webp";
-import Transformer3 from "/transformer3.avif";
-import Transformer4 from "/transformer4.jpeg";
-import Transformer5 from "/transformer5.jpeg";
-import Transformer6 from "/transformer6.avif";
+const Transformer1 = "/transformer1.avif";
+const Transformer2 = "/transformer2.webp";
+const Transformer3 = "/transformer3.avif";
+const Transformer4 = "/transformer4.jpeg";
+const Transformer5 = "/transformer5.jpeg";
+const Transformer6 = "/transformer6.avif";
 
 const TransformersPage: React.FC = () => {
   // Transformer data from 100kVA to 6000kVA
@@ -50,7 +50,7 @@ const TransformersPage: React.FC = () => {
                 {transformer.kva >= 1000
                   ? "Heavy-duty power transformer"
                   : "Distribution transformer"}
-                with advanced cooling technology.
+                 — discuss the configuration with the team.
               </p>
 
               <div className="flex justify-between items-center">
@@ -58,10 +58,11 @@ const TransformersPage: React.FC = () => {
                   {transformer.kva}kVA
                 </span>
 
-                <Link to={`/transformers/${transformer.id}`}>
-                  <button className="px-4 py-2 rounded-lg font-medium bg-red-500 hover:bg-red-600 text-white transition-colors dark:bg-red-600 dark:hover:bg-red-700">
-                    Specifications
-                  </button>
+                <Link
+                  to={`/transformers/${transformer.id}`}
+                  className="px-4 py-2 rounded-lg font-medium bg-red-500 hover:bg-red-600 text-white transition-colors dark:bg-red-600 dark:hover:bg-red-700 inline-flex items-center justify-center"
+                >
+                  Specifications
                 </Link>
               </div>
             </div>
@@ -69,10 +70,11 @@ const TransformersPage: React.FC = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link to="/">
-            <button className="px-6 py-3 rounded-lg font-medium transition-colors bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600">
-              &larr; Back to Home
-            </button>
+          <Link
+            to="/"
+            className="px-6 py-3 rounded-lg font-medium transition-colors bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 inline-flex items-center justify-center"
+          >
+            &larr; Back to Home
           </Link>
         </div>
       </div>

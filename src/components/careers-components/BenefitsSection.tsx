@@ -76,8 +76,6 @@ export default function BenefitsSection() {
               whileHover={{
                 y: -5,
                 borderColor: "#ef4444",
-                backgroundColor: "#f9fafb",
-                dark: { backgroundColor: "#1f2937" },
               }}
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
